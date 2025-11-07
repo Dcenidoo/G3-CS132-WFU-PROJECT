@@ -535,9 +535,13 @@ video {
 .bg-gradient-1 {
   background-image: linear-gradient(
     180deg,
-    hsl(60, 10%, 98%) 0%,
-    hsl(120, 10%, 95%) 100%
+    hsl(120, 95%, 75%) 0%,
+    hsl(120, 95%, 70%) 100%
   );
+}
+.bg-dark-green {
+  background-color: #0E4F2C;
+  color: white;
 }
 .object-cover {
   object-fit: cover;
@@ -629,7 +633,7 @@ video {
 }
 .text-hero-text {
   --tw-text-opacity: 1;
-  color: hsl(0 0% 10% / var(--tw-text-opacity));
+  color: hsl(120 100% 10% / var(--tw-text-opacity));
 }
 .text-navbar-text {
   --tw-text-opacity: 1;
@@ -683,23 +687,19 @@ video {
 }
 
 .overview-heading {
-  margin-bottom: 1.25rem; /* 20px */
+  margin-bottom: 1.25rem;
 }
 
 .overview-intro {
-  /* Match the vertical gap produced by .space-y-16 (4rem) so the
-     spacing between the Overview intro and the Research Questions
-     header equals the spacing between Research Questions and
-     Proposed Solution. */
-  margin-bottom: 4rem; /* 64px */
+  margin-bottom: 4rem; 
 }
 
 @media (max-width: 767px) {
   .overview-heading {
-    margin-bottom: 0.75rem; /* 12px */
+    margin-bottom: 0.75rem; 
   }
 
   .overview-intro {
-    margin-bottom: 4rem; /* 64px */
+    margin-bottom: 4rem;
   }
 }

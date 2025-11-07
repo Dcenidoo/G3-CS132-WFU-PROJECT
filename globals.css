@@ -681,3 +681,25 @@ video {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+.overview-heading {
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.overview-intro {
+  /* Match the vertical gap produced by .space-y-16 (4rem) so the
+     spacing between the Overview intro and the Research Questions
+     header equals the spacing between Research Questions and
+     Proposed Solution. */
+  margin-bottom: 4rem; /* 64px */
+}
+
+@media (max-width: 767px) {
+  .overview-heading {
+    margin-bottom: 0.75rem; /* 12px */
+  }
+
+  .overview-intro {
+    margin-bottom: 4rem; /* 64px */
+  }
+}

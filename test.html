@@ -13,7 +13,7 @@
     </title>
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
       body,
       html {
@@ -36,9 +36,9 @@
       .aurora-text {
         background: linear-gradient(
           120deg,
-          hsl(120, 100%, 85%) 0%,
-          hsl(120, 80%, 95%) 50%,
-          hsl(120, 100%, 85%) 100%
+          hsl(147, 70%, 18%) 0%,
+          hsl(122, 44%, 58%) 50%,
+          hsl(147, 70%, 18%) 100%
         );
         background-size: 200% auto;
         -webkit-background-clip: text;
@@ -157,6 +157,12 @@
             aria-label="Navigate to Team section"
             >Team</a
           >
+          <a
+            href="#references"
+            class="nav-link text-navbar-text font-sans font-normal text-base cursor-pointer"
+            aria-label="Navigate to References section"
+            >References</a
+          >
         </div>
 
         <!-- Mobile Menu Button -->
@@ -214,6 +220,12 @@
             aria-label="Navigate to Team section"
             >Team</a
           >
+          <a
+            href="#references"
+            class="nav-link text-navbar-text font-sans font-normal text-base cursor-pointer"
+            aria-label="Navigate to References section"
+            >References</a
+          >
         </div>
       </div>
     </nav>
@@ -222,49 +234,48 @@
       <!-- Section 1: Hero -->
       <section
         id="top"
-        class="min-h-screen flex items-center justify-center bg-dark-green px-8 py-32"
+        class="min-h-screen flex items-center justify-center bg-gradient-1 px-8 py-32"
       >
         <div class="max-w-screen-lg mx-auto text-center fade-in-up">
           <h1
-            style="font-family: 'Montserrat', sans-serif; font-weight: 800;"
-            class="text-h1 leading-headline text-white mb-8 tracking-tight"
+            class="font-sans font-medium text-h1 leading-headline text-hero-text mb-8"
           >
             Understanding the
-            <span class="aurora-text" style="font-weight: 900;">Impact of Regional Budgets</span> on
-            <span class="aurora-text" style="font-weight: 900;">Quality and Accessibility of Higher Education</span>
-            in the Philippines
+            <span class="aurora-text">Impact of Regional Budgets</span> and
+            <span class="aurora-text">Literacy on Higher Education</span>
+            Outcomes in the Philippines
           </h1>
-          <div class="flex flex-wrap justify-center gap-8 mt-12">
+          <div class="flex flex-wrap justify-center gap-8 mt-12 text-gray-600">
             <div class="text-center">
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-normal text-base text-white">
-                Arian Balicusto
+              <p class="font-body font-normal text-base text-gray-700">
+                John Dela Cruz
               </p>
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-light text-small text-white/80">
-                CS 132 WFU | 2023-xxxxx
+              <p class="font-body font-light text-small text-gray-500">
+                Section A | ID: 2021-12345
               </p>
             </div>
             <div class="text-center">
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-normal text-base text-white">
-                Dash Ceñido
+              <p class="font-body font-normal text-base text-gray-700">
+                Maria Santos
               </p>
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-light text-small text-white/80">
-                CS 132 WFU | 2023-06831
-              </p>
-            </div>
-            <div class="text-center">
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-normal text-base text-white">
-                Trish Obzunar
-              </p>
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-light text-small text-white/80">
-                CS 132 WFU| 2023-xxxxx
+              <p class="font-body font-light text-small text-gray-500">
+                Section B | ID: 2021-12346
               </p>
             </div>
             <div class="text-center">
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-normal text-base text-white">
-                Chloe Santos
+              <p class="font-body font-normal text-base text-gray-700">
+                Jose Reyes
               </p>
-              <p style="font-family: 'Montserrat', sans-serif;" class="font-light text-small text-white/80">
-                CS 132 WFU | 2023-xxxxx
+              <p class="font-body font-light text-small text-gray-500">
+                Section C | ID: 2021-12347
+              </p>
+            </div>
+            <div class="text-center">
+              <p class="font-body font-normal text-base text-gray-700">
+                Ana Garcia
+              </p>
+              <p class="font-body font-light text-small text-gray-500">
+                Section D | ID: 2021-12348
               </p>
             </div>
           </div>
@@ -294,33 +305,20 @@
       </section>
 
       <!-- Section 2: Overview -->
-      <section id="overview" class="py-32 px-8 bg-off-white">
+      <section id="overview" class="py-32 px-8 bg-green-light">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center overview-heading fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
           >
             Overview
           </h2>
-
-          <p class="font-body font-light text-body leading-body text-gray-600 overview-intro fade-in-up">
-            The Fourth Sustainable Development Goal (SDG 4), Quality Education,
-            highlights the importance of ensuring inclusive, equitable, and
-            high-quality education for all, along with opportunities for
-            lifelong learning. In the Philippines, recent studies indicate
-            that although access to higher education has expanded,
-            disadvantaged students remain less likely to complete their
-            studies and are often concentrated in lower-tier institutions,
-            suggesting that inequalities still persist (Yee, 2023). Building
-            on these findings, this study examines the factors influencing
-            quality and accessibility on higher education in the Philippines.
-          </p>
 
           <div class="space-y-16">
             <div class="fade-in-up">
               <h3
                 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
               >
-                Proposed Solution
+                Problem Statement
               </h3>
               <p
                 class="font-body font-light text-body leading-body text-gray-600"
@@ -341,19 +339,26 @@
               >
                 Research Questions
               </h3>
-              <ol
-                class="font-body font-light text-body leading-body text-gray-600 list-decimal list-inside space-y-2"
+              <ul
+                class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
               >
                 <li>
-                  1. How does regional budget allocation for higher education affect 
-                  education quality, as reflected by faculty-student ratios?
+                  How do regional budget allocations correlate with higher
+                  education enrollment and completion rates?
                 </li>
                 <li>
-                  2. Which regions have higher or lower access to higher education as 
-                  indicated by enrollment statistics, and how do these disparities 
-                  relate to regional budget allocations?
+                  What is the relationship between regional literacy rates and
+                  higher education outcomes?
                 </li>
-              </ol>
+                <li>
+                  Are there significant disparities in educational outcomes
+                  across different regions of the Philippines?
+                </li>
+                <li>
+                  What policy recommendations can be derived from the data
+                  analysis?
+                </li>
+              </ul>
             </div>
 
             <div class="fade-in-up">
@@ -466,7 +471,7 @@
       </section>
 
       <!-- Section 4: Methods -->
-      <section id="methods" class="py-32 px-8 bg-off-white">
+      <section id="methods" class="py-32 px-8 bg-green-light">
         <div class="max-w-screen-lg mx-auto">
           <h2
             class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
@@ -692,7 +697,7 @@
       </section>
 
       <!-- Section 6: Team -->
-      <section id="team" class="py-32 px-8 bg-off-white">
+      <section id="team" class="py-32 px-8 bg-green-light">
         <div class="max-w-screen-lg mx-auto">
           <h2
             class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
@@ -782,6 +787,56 @@
               </p>
               <p class="font-body font-light text-small text-gray-500">
                 ID: 2021-12348
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+      <!-- Section 7: References -->
+      <section id="references" class="py-32 px-8 bg-off-white">
+        <div class="max-w-screen-lg mx-auto">
+          <h2
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+          >
+            References
+          </h2>
+
+          <div class="space-y-6 fade-in-up">
+            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+              <p class="font-body font-light text-body leading-body text-gray-700">
+                [1] Philippine Statistics Authority. (2023). <em>Regional Education Statistics 2015-2023</em>. Manila: PSA Publications.
+              </p>
+            </div>
+
+            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+              <p class="font-body font-light text-body leading-body text-gray-700">
+                [2] Commission on Higher Education. (2022). <em>Higher Education Enrollment and Graduation Trends in the Philippines</em>. Quezon City: CHED Research Office.
+              </p>
+            </div>
+
+            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+              <p class="font-body font-light text-body leading-body text-gray-700">
+                [3] Department of Education. (2021). <em>Regional Budget Allocation and Educational Outcomes: A Longitudinal Study</em>. Manila: DepEd Policy Research Unit.
+              </p>
+            </div>
+
+            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+              <p class="font-body font-light text-body leading-body text-gray-700">
+                [4] Santos, M. A., & Reyes, J. P. (2020). Literacy rates and higher education access in developing nations. <em>Journal of Educational Research</em>, 45(3), 234-256.
+              </p>
+            </div>
+
+            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+              <p class="font-body font-light text-body leading-body text-gray-700">
+                [5] Garcia, A. L., & Dela Cruz, J. M. (2019). Regional disparities in Philippine education: An empirical analysis. <em>Asian Journal of Education Policy</em>, 12(2), 145-168.
+              </p>
+            </div>
+
+            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+              <p class="font-body font-light text-body leading-body text-gray-700">
+                [6] World Bank. (2023). <em>Education Expenditure and Outcomes in Southeast Asia</em>. Washington, DC: World Bank Publications.
               </p>
             </div>
           </div>

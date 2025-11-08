@@ -19,6 +19,61 @@
       html {
         color: hsl(0, 0%, 20%);
         background-color: hsl(60, 10%, 97%);
+        overflow-x: hidden;
+      }
+
+      /* Floating shapes background */
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .shape {
+        position: absolute;
+        opacity: 0.08;
+        animation: float 20s infinite ease-in-out;
+      }
+
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, hsl(147, 70%, 18%) 0%, transparent 70%);
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .shape-2 {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, hsl(122, 44%, 58%) 0%, transparent 70%);
+        top: 60%;
+        right: 10%;
+        animation-delay: 5s;
+      }
+
+      .shape-3 {
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, hsl(147, 70%, 18%) 0%, transparent 70%);
+        bottom: 20%;
+        left: 15%;
+        animation-delay: 10s;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        33% {
+          transform: translate(30px, -30px) rotate(120deg);
+        }
+        66% {
+          transform: translate(-20px, 20px) rotate(240deg);
+        }
       }
 
       @keyframes aurora {
@@ -110,8 +165,84 @@
       .iframe-container:hover {
         border-color: hsl(122, 44%, 58%);
       }
+
+      /* Accent decorations */
+      .section-accent {
+        position: relative;
+      }
+
+      .section-accent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, hsl(147, 70%, 18%), hsl(122, 44%, 58%));
+        border-radius: 2px;
+      }
+
+      /* Card hover effects */
+      .hover-lift {
+        transition: all 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(14, 79, 44, 0.15);
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, hsl(147, 70%, 18%), hsl(122, 44%, 58%));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Pulse animation for scroll indicator */
+      @keyframes pulse-ring {
+        0% {
+          transform: scale(0.95);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(0.95);
+          opacity: 1;
+        }
+      }
+
+      .pulse-ring {
+        animation: pulse-ring 2s ease-in-out infinite;
+      }
+
+      /* Stats counter animation */
+      .stat-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(108, 193, 107, 0.1), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .stat-card:hover::after {
+        left: 100%;
+      }
     </style>
-    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="test.css" />
   </head>
   <body class="font-body text-body leading-body">
     <!-- Fixed Navbar -->
@@ -232,10 +363,12 @@
 
     <main>
       <!-- Section 1: Hero -->
-      <section
-        id="top"
-        class="min-h-screen flex items-center justify-center bg-gradient-1 px-8 py-32"
-      >
+      <section id="top" class="min-h-screen flex items-center justify-center bg-gradient-1 px-8 py-32 relative">
+      <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      </div>
         <div class="max-w-screen-lg mx-auto text-center fade-in-up">
           <h1
             class="font-sans font-medium text-h1 leading-headline text-gray-800 mb-8"
@@ -282,7 +415,7 @@
           <div class="mt-16">
             <a
               href="#overview"
-              class="inline-block text-primary cursor-pointer"
+              class="inline-block text-primary cursor-pointer pulse-ring"
               aria-label="Scroll to Overview section"
             >
               <svg
@@ -305,16 +438,30 @@
       </section>
 
   <!-- Section 2: Overview -->
-  <section id="overview" class="py-32 px-8 bg-section-overview section-bg">
+  <section id="overview" class="py-32 px-8 bg-green-light relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center overview-heading fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Overview
           </h2>
 
-          <p class="font-body font-light text-body leading-body text-gray-600 overview-intro fade-in-up">
-            The Fourth Sustainable Development Goal (SDG 4), Quality Education,
+          <div class="space-y-16">
+            <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold">
+                  ?
+                </div>
+                <h3
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800"
+                >
+                  Problem Statement
+                </h3>
+              </div>
+              <p
+                class="font-body font-light text-body leading-body text-gray-600"
+              >
+                The Fourth Sustainable Development Goal (SDG 4), Quality Education,
             highlights the importance of ensuring inclusive, equitable, and
             high-quality education for all, along with opportunities for
             lifelong learning. In the Philippines, recent studies indicate
@@ -324,34 +471,42 @@
             suggesting that inequalities still persist (Yee, 2023). Building
             on these findings, this study examines the factors influencing
             quality and accessibility on higher education in the Philippines.
-          </p>
-
-          <div class="space-y-16">
-            <div class="fade-in-up">
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Proposed Solution
-              </h3>
+              </p>
+            </div>
+            
+            <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold">
+                  S
+                </div>
+                <h3
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800"
+                >
+                  Proposed Solution
+                </h3>
+              </div>
               <p
                 class="font-body font-light text-body leading-body text-gray-600"
               >
-                Higher education outcomes in the Philippines vary significantly
-                across regions. Understanding the relationship between regional
-                budget allocations, literacy rates, and educational success is
-                crucial for policy development and resource optimization. This
-                research investigates how these factors interact to influence
-                enrollment rates, graduation rates, and overall educational
-                attainment.
+               Higher education outcomes in the Philippines vary significantly across regions. 
+               Understanding the relationship between regional budget allocations, literacy rates, 
+               and educational success is crucial for policy development and resource optimization. 
+               This research investigates how these factors interact to influence enrollment rates, 
+               graduation rates, and overall educational attainment.
               </p>
             </div>
 
-            <div class="fade-in-up">
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Research Questions
-              </h3>
+            <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold">
+                  Q
+                </div>
+                <h3
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800"
+                >
+                  Research Questions
+                </h3>
+              </div>
               <ol
                 class="font-body font-light text-body leading-body text-gray-600 list-decimal list-inside space-y-2"
               >
@@ -367,12 +522,17 @@
               </ol>
             </div>
 
-            <div class="fade-in-up">
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Hypothesis
-              </h3>
+            <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold">
+                  H
+                </div>
+                <h3
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800"
+                >
+                  Hypothesis
+                </h3>
+              </div>
               <p
                 class="font-body font-light text-body leading-body text-gray-600"
               >
@@ -390,10 +550,10 @@
       </section>
 
   <!-- Section 3: Data -->
-  <section id="data" class="py-32 px-8 bg-section-data section-bg">
+  <section id="data" class="py-32 px-8 bg-gray-50 relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Data
           </h2>
@@ -444,13 +604,16 @@
                 <p
                   class="font-body font-light text-body leading-body text-gray-600"
                 >
-                  Our dataset comprises regional education statistics from the
-                  Philippine Statistics Authority (PSA), Department of Education
-                  (DepEd), and Commission on Higher Education (CHED) covering
-                  the period 2015-2023. Data includes regional budget
-                  allocations, literacy rates, enrollment figures, graduation
-                  rates, and socioeconomic indicators across all 17 regions of
-                  the Philippines.
+                  The data utilized in this study were obtained from official 
+                  government documents and statistical releases, specifically 
+                  those published by the Commission on Higher Education (CHED), 
+                  the Philippine Statistics Authority (PSA), and the National 
+                  Expenditure Program (NEP). Relevant tables were extracted from 
+                  the reports, and the values were manually digitized and encoded 
+                  into an Excel spreadsheet for analysis. Basic data cleaning was 
+                  performed, including the standardization of formats and labels, 
+                  restructuring of tables into a consistent format, and merging of 
+                  datasets at the regional level.
                 </p>
               </div>
 
@@ -458,7 +621,7 @@
                 <h3
                   class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3"
                 >
-                  Data Context
+                  Data Set Size
                 </h3>
                 <p
                   class="font-body font-light text-body leading-body text-gray-600"
@@ -477,10 +640,10 @@
       </section>
 
   <!-- Section 4: Methods -->
-  <section id="methods" class="py-32 px-8 bg-section-methods section-bg">
+  <section id="methods" class="py-32 px-8 bg-green-light relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Methods
           </h2>
@@ -565,10 +728,10 @@
       </section>
 
   <!-- Section 5: Results -->
-  <section id="results" class="py-32 px-8 bg-section-results section-bg">
+  <section id="results" class="py-32 px-8 bg-gray-50 relative">
         <div class="max-w-screen-xl mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Results
           </h2>
@@ -687,10 +850,10 @@
       </section>
 
   <!-- Section 6: Team -->
-  <section id="team" class="py-32 px-8 bg-section-team section-bg">
+  <section id="team" class="py-32 px-8 bg-green-light relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Team
           </h2>
@@ -772,10 +935,10 @@
       </section>
 
       <!-- Section 7: References -->
-      <section id="references" class="py-32 px-8 bg-off-white">
+      <section id="references" class="py-32 px-8 bg-off-white relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             References
           </h2>

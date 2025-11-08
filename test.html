@@ -8,8 +8,8 @@
       content="Understanding the Impact of Regional Budgets and Literacy on Higher Education Outcomes in the Philippines - A research project exploring educational outcomes through data analysis."
     />
     <title>
-      Regional Budgets &amp; Literacy Impact on Higher Education | Philippines
-      Research
+      Understanding the Impact of Regional Budgets on the Quality and Accessibility of Higher Education in the Philippines
+
     </title>
 
     <style>
@@ -19,6 +19,61 @@
       html {
         color: hsl(0, 0%, 20%);
         background-color: hsl(60, 10%, 97%);
+        overflow-x: hidden;
+      }
+
+      /* Floating shapes background */
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .shape {
+        position: absolute;
+        opacity: 0.08;
+        animation: float 20s infinite ease-in-out;
+      }
+
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, hsl(147, 70%, 18%) 0%, transparent 70%);
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .shape-2 {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, hsl(122, 44%, 58%) 0%, transparent 70%);
+        top: 60%;
+        right: 10%;
+        animation-delay: 5s;
+      }
+
+      .shape-3 {
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, hsl(147, 70%, 18%) 0%, transparent 70%);
+        bottom: 20%;
+        left: 15%;
+        animation-delay: 10s;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        33% {
+          transform: translate(30px, -30px) rotate(120deg);
+        }
+        66% {
+          transform: translate(-20px, 20px) rotate(240deg);
+        }
       }
 
       @keyframes aurora {
@@ -110,8 +165,84 @@
       .iframe-container:hover {
         border-color: hsl(122, 44%, 58%);
       }
+
+      /* Accent decorations */
+      .section-accent {
+        position: relative;
+      }
+
+      .section-accent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, hsl(147, 70%, 18%), hsl(122, 44%, 58%));
+        border-radius: 2px;
+      }
+
+      /* Card hover effects */
+      .hover-lift {
+        transition: all 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(14, 79, 44, 0.15);
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, hsl(147, 70%, 18%), hsl(122, 44%, 58%));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Pulse animation for scroll indicator */
+      @keyframes pulse-ring {
+        0% {
+          transform: scale(0.95);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(0.95);
+          opacity: 1;
+        }
+      }
+
+      .pulse-ring {
+        animation: pulse-ring 2s ease-in-out infinite;
+      }
+
+      /* Stats counter animation */
+      .stat-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(108, 193, 107, 0.1), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .stat-card:hover::after {
+        left: 100%;
+      }
     </style>
-    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="test.css" />
   </head>
   <body class="font-body text-body leading-body">
     <!-- Fixed Navbar -->
@@ -234,59 +365,64 @@
       <!-- Section 1: Hero -->
       <section
         id="top"
-        class="min-h-screen flex items-center justify-center bg-gradient-1 px-8 py-32"
+        class="min-h-screen flex items-center justify-center bg-gradient-1 px-8 py-32 relative"
       >
-        <div class="max-w-screen-lg mx-auto text-center fade-in-up">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+        <div class="max-w-screen-lg mx-auto text-center fade-in-up relative z-10">
           <h1
-            class="font-sans font-medium text-h1 leading-headline text-hero-text mb-8"
+            class="font-sans font-medium text-h1 leading-headline text-gray-800 mb-8"
           >
             Understanding the
-            <span class="aurora-text">Impact of Regional Budgets</span> and
-            <span class="aurora-text">Literacy on Higher Education</span>
-            Outcomes in the Philippines
+            <span class="aurora-text">Impact of Regional Budgets</span> on
+            <span class="aurora-text">Quality and Accessibility of Higher Education</span>
+            in the Philippines
           </h1>
           <div class="flex flex-wrap justify-center gap-8 mt-12 text-gray-600">
             <div class="text-center">
               <p class="font-body font-normal text-base text-gray-700">
-                John Dela Cruz
+                Arian Balicusto
               </p>
               <p class="font-body font-light text-small text-gray-500">
-                Section A | ID: 2021-12345
+                CS 132 WFU | 2023-01223
               </p>
             </div>
             <div class="text-center">
               <p class="font-body font-normal text-base text-gray-700">
-                Maria Santos
+                Dash Ceñido
               </p>
               <p class="font-body font-light text-small text-gray-500">
-                Section B | ID: 2021-12346
+                CS 132 WFU | 2023-06831
               </p>
             </div>
             <div class="text-center">
               <p class="font-body font-normal text-base text-gray-700">
-                Jose Reyes
+                Trish Obzunar
               </p>
               <p class="font-body font-light text-small text-gray-500">
-                Section C | ID: 2021-12347
+                CS 132 WFU | 2023-13237
               </p>
             </div>
             <div class="text-center">
               <p class="font-body font-normal text-base text-gray-700">
-                Ana Garcia
+                Chloe Santos
               </p>
               <p class="font-body font-light text-small text-gray-500">
-                Section D | ID: 2021-12348
+                CS 132 WFU | 2023-
               </p>
             </div>
           </div>
           <div class="mt-16">
             <a
               href="#overview"
-              class="inline-block text-primary cursor-pointer"
+              class="inline-block text-primary cursor-pointer pulse-ring"
               aria-label="Scroll to Overview section"
             >
               <svg
-                class="w-8 h-8 animate-bounce"
+                class="w-8 h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -305,21 +441,26 @@
       </section>
 
       <!-- Section 2: Overview -->
-      <section id="overview" class="py-32 px-8 bg-green-light">
+      <section id="overview" class="py-32 px-8 bg-green-light relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Overview
           </h2>
 
           <div class="space-y-16">
-            <div class="fade-in-up">
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Problem Statement
-              </h3>
+            <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold">
+                  ?
+                </div>
+                <h3
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800"
+                >
+                  Problem Statement
+                </h3>
+              </div>
               <p
                 class="font-body font-light text-body leading-body text-gray-600"
               >
@@ -333,12 +474,17 @@
               </p>
             </div>
 
-            <div class="fade-in-up">
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Research Questions
-              </h3>
+            <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold">
+                  Q
+                </div>
+                <h3
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800"
+                >
+                  Research Questions
+                </h3>
+              </div>
               <ul
                 class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
               >
@@ -361,12 +507,17 @@
               </ul>
             </div>
 
-            <div class="fade-in-up">
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Hypothesis
-              </h3>
+            <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold">
+                  H
+                </div>
+                <h3
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800"
+                >
+                  Hypothesis
+                </h3>
+              </div>
               <p
                 class="font-body font-light text-body leading-body text-gray-600"
               >
@@ -384,10 +535,10 @@
       </section>
 
       <!-- Section 3: Data -->
-      <section id="data" class="py-32 px-8 bg-gray-50">
+      <section id="data" class="py-32 px-8 bg-gray-50 relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Data
           </h2>
@@ -471,17 +622,17 @@
       </section>
 
       <!-- Section 4: Methods -->
-      <section id="methods" class="py-32 px-8 bg-green-light">
+      <section id="methods" class="py-32 px-8 bg-green-light relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Methods
           </h2>
 
           <div class="grid md:grid-cols-2 gap-8">
             <div
-              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up"
+              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up hover-lift stat-card"
             >
               <h3
                 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
@@ -507,7 +658,7 @@
             </div>
 
             <div
-              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up"
+              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up hover-lift stat-card"
             >
               <h3
                 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
@@ -531,7 +682,7 @@
             </div>
 
             <div
-              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up md:col-span-2"
+              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up md:col-span-2 hover-lift stat-card"
             >
               <h3
                 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
@@ -559,18 +710,34 @@
       </section>
 
       <!-- Section 5: Results -->
-      <section id="results" class="py-32 px-8 bg-gray-50">
+      <section id="results" class="py-32 px-8 bg-gray-50 relative">
         <div class="max-w-screen-xl mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Results
           </h2>
 
+          <!-- Key Stats Banner -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 fade-in-up">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-default p-6 text-center stat-card">
+              <div class="text-4xl font-bold gradient-text mb-2">82%</div>
+              <div class="text-sm text-gray-600 font-medium">Model Accuracy (R²)</div>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-default p-6 text-center stat-card">
+              <div class="text-4xl font-bold gradient-text mb-2">0.78</div>
+              <div class="text-sm text-gray-600 font-medium">Budget Correlation</div>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-default p-6 text-center stat-card">
+              <div class="text-4xl font-bold gradient-text mb-2">17</div>
+              <div class="text-sm text-gray-600 font-medium">Regions Analyzed</div>
+            </div>
+          </div>
+
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="fade-in-up">
               <div
-                class="bg-neutral border border-gray-200 rounded-default p-8 mb-4"
+                class="bg-neutral border border-gray-200 rounded-default p-8 mb-4 hover-lift"
               >
                 <div
                   class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4"
@@ -606,7 +773,7 @@
 
             <div class="fade-in-up">
               <div
-                class="bg-neutral border border-gray-200 rounded-default p-8 mb-4"
+                class="bg-neutral border border-gray-200 rounded-default p-8 mb-4 hover-lift"
               >
                 <div
                   class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4"
@@ -642,7 +809,7 @@
           </div>
 
           <div class="fade-in-up">
-            <div class="bg-neutral border border-gray-200 rounded-default p-8">
+            <div class="bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
               <div
                 class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4"
               >
@@ -697,10 +864,10 @@
       </section>
 
       <!-- Section 6: Team -->
-      <section id="team" class="py-32 px-8 bg-green-light">
+      <section id="team" class="py-32 px-8 bg-green-light relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             Team
           </h2>
@@ -795,46 +962,46 @@
     </main>
 
       <!-- Section 7: References -->
-      <section id="references" class="py-32 px-8 bg-off-white">
+      <section id="references" class="py-32 px-8 bg-off-white relative">
         <div class="max-w-screen-lg mx-auto">
           <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up"
+            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
           >
             References
           </h2>
 
           <div class="space-y-6 fade-in-up">
-            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+            <div class="bg-neutral border border-gray-200 rounded-default p-6 hover-lift">
               <p class="font-body font-light text-body leading-body text-gray-700">
                 [1] Philippine Statistics Authority. (2023). <em>Regional Education Statistics 2015-2023</em>. Manila: PSA Publications.
               </p>
             </div>
 
-            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+            <div class="bg-neutral border border-gray-200 rounded-default p-6 hover-lift">
               <p class="font-body font-light text-body leading-body text-gray-700">
                 [2] Commission on Higher Education. (2022). <em>Higher Education Enrollment and Graduation Trends in the Philippines</em>. Quezon City: CHED Research Office.
               </p>
             </div>
 
-            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+            <div class="bg-neutral border border-gray-200 rounded-default p-6 hover-lift">
               <p class="font-body font-light text-body leading-body text-gray-700">
                 [3] Department of Education. (2021). <em>Regional Budget Allocation and Educational Outcomes: A Longitudinal Study</em>. Manila: DepEd Policy Research Unit.
               </p>
             </div>
 
-            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+            <div class="bg-neutral border border-gray-200 rounded-default p-6 hover-lift">
               <p class="font-body font-light text-body leading-body text-gray-700">
                 [4] Santos, M. A., & Reyes, J. P. (2020). Literacy rates and higher education access in developing nations. <em>Journal of Educational Research</em>, 45(3), 234-256.
               </p>
             </div>
 
-            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+            <div class="bg-neutral border border-gray-200 rounded-default p-6 hover-lift">
               <p class="font-body font-light text-body leading-body text-gray-700">
                 [5] Garcia, A. L., & Dela Cruz, J. M. (2019). Regional disparities in Philippine education: An empirical analysis. <em>Asian Journal of Education Policy</em>, 12(2), 145-168.
               </p>
             </div>
 
-            <div class="bg-neutral border border-gray-200 rounded-default p-6">
+            <div class="bg-neutral border border-gray-200 rounded-default p-6 hover-lift">
               <p class="font-body font-light text-body leading-body text-gray-700">
                 [6] World Bank. (2023). <em>Education Expenditure and Outcomes in Southeast Asia</em>. Washington, DC: World Bank Publications.
               </p>

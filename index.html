@@ -624,12 +624,12 @@
                 <p
                   class="font-body font-light text-body leading-body text-gray-600"
                 >
-                  The dataset has been cleaned and normalized to account for
-                  population differences, inflation adjustments, and regional
-                  variations in cost of living. Missing values were handled
-                  through multiple imputation methods, and outliers were
-                  carefully examined for validity before inclusion or exclusion
-                  from the analysis.
+                  The 2024 Expenditure Program dataset comprises 18 observations, representing the CHED Central Office and the 17 administrative regions, with four budget-related variables. The Higher Education Enrollment and Faculty–Student Ratio dataset includes 18 observations, corresponding to 17 regions and one national total, with seven variables. The 2024 Functional Literacy, Education, and Mass Media Survey (FLEMMS) encompassed 179,560 eligible households and 610,590 individuals aged five years and above, which were subsequently aggregated into 17 regional observations with six variables.
+                </p>
+                <p
+                  class="font-body font-light text-body leading-body text-gray-600"
+                >
+                  The 2024 Enrollment and Faculty–Student Ratio dataset, comprises 64 observations and 15 variables. This version provides a more comprehensive view of 2024 enrollment patterns, including student counts and the corresponding faculty–student ratios across higher education institutions, both public and private. It serves as a comprehensive source of institutional data for analyzing academic capacity and resource distribution at a detailed level. The same goes for the 2019 dataset, but it includes separate tables for the public and private institutions. For the public institutions, it encompasses 1,540 observations, while private institutions have 114 observations, both with five variables.
                 </p>
               </div>
             </div>
@@ -665,11 +665,10 @@
               <ul
                 class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
               >
-                <li>Descriptive statistics for all variables</li>
-                <li>Correlation matrix analysis</li>
-                <li>Regional comparison visualizations</li>
-                <li>Time-series trend analysis</li>
-                <li>Outlier detection and validation</li>
+                <li>Data Cleaning and Preprocessing</li>
+                <li>Data a</li>
+                <li>WIP</li>
+                <li>WIP</li>
               </ul>
             </div>
 
@@ -689,11 +688,8 @@
               <ul
                 class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
               >
-                <li>Multiple linear regression analysis</li>
-                <li>ANOVA for regional comparisons</li>
-                <li>Pearson correlation coefficients</li>
-                <li>Chi-square tests for categorical variables</li>
-                <li>Significance level set at α = 0.05</li>
+                <li>Spearman Correlation</li>
+                <li>T-Test</li>
               </ul>
             </div>
 
@@ -715,10 +711,7 @@
               <ul
                 class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
               >
-                <li>Multivariate regression models with interaction terms</li>
-                <li>Panel data analysis to account for temporal effects</li>
-                <li>Hierarchical clustering for regional grouping</li>
-                <li>Cross-validation techniques for model validation</li>
+                <li>WIP</li>
               </ul>
             </div>
           </div>
@@ -736,33 +729,19 @@
 
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="fade-in-up">
-              <div
-                class="bg-neutral border border-gray-200 rounded-default p-8 mb-4"
-              >
-                <div
-                  class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4"
-                >
-                  <svg
-                    class="w-16 h-16 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
-                    ></path>
-                  </svg>
+              <div class="bg-neutral border border-gray-200 rounded-default p-8 mb-4">
+                <div class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4">
+                  <img
+                    src="question1.1.png"
+                    alt="Budget vs. enrollment correlation chart"
+                    class="w-full h-full object-cover rounded"
+                    loading="lazy"
+                  />
                 </div>
                 <p class="font-sans font-medium text-base text-gray-800 mb-2">
                   Budget vs. Enrollment Correlation
                 </p>
-                <p
-                  class="font-body font-light text-small leading-body text-gray-600"
-                >
+                <p class="font-body font-light text-small leading-body text-gray-600">
                   Strong positive correlation (r = 0.78, p &lt; 0.001) between
                   regional education budgets and higher education enrollment
                   rates. Regions with budget increases of 20% or more showed
@@ -772,33 +751,19 @@
             </div>
 
             <div class="fade-in-up">
-              <div
-                class="bg-neutral border border-gray-200 rounded-default p-8 mb-4"
-              >
-                <div
-                  class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4"
-                >
-                  <svg
-                    class="w-16 h-16 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    ></path>
-                  </svg>
+              <div class="bg-neutral border border-gray-200 rounded-default p-8 mb-4">
+                <div class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4">
+                  <img
+                    src="question1.2.png"
+                    alt="Literacy rate impact chart"
+                    class="w-full h-full object-cover rounded"
+                    loading="lazy"
+                  />
                 </div>
                 <p class="font-sans font-medium text-base text-gray-800 mb-2">
                   Literacy Rate Impact
                 </p>
-                <p
-                  class="font-body font-light text-small leading-body text-gray-600"
-                >
+                <p class="font-body font-light text-small leading-body text-gray-600">
                   Literacy rates showed moderate correlation (r = 0.62, p &lt;
                   0.01) with graduation rates. Regions with literacy rates above
                   95% demonstrated 30% higher graduation rates compared to

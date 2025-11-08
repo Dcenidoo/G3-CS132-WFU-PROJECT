@@ -703,3 +703,122 @@ video {
     margin-bottom: 4rem;
   }
 }
+
+
+.section-bg {
+  position: relative; 
+  overflow: visible;
+}
+
+.section-bg::before,
+.section-bg::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: -1; 
+}
+
+.section-bg::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+  box-shadow: 0 8px 24px rgba(16,24,32,0.03);
+  transform: translateZ(0);
+}
+
+.bg-section-overview {
+  background-image: linear-gradient(180deg, hsl(80 6% 98%) 0%, hsl(0 0% 100%) 100%);
+  position: relative;
+}
+.bg-section-overview::before {
+  top: -10%;
+  right: -6%;
+  width: 42%;
+  height: 42%;
+  background: radial-gradient(circle at 60% 30%, rgba(18,75,56,0.12), rgba(18,75,56,0.00) 40%);
+  filter: blur(56px);
+  opacity: 0.08;
+}
+
+.bg-section-data {
+  background: linear-gradient(140deg, #fbfdfc 0%, #ffffff 50%);
+  background-size: 200% 200%;
+  position: relative;
+  isolation: isolate;
+}
+.bg-section-data::before {
+  /* subtle diagonal mesh fade bottom-left */
+  left: -8%;
+  bottom: -10%;
+  width: 56%;
+  height: 56%;
+  background: radial-gradient(circle at 20% 80%, rgba(84,106,99,0.10), rgba(84,106,99,0) 35%);
+  filter: blur(48px);
+  opacity: 0.09;
+}
+
+/* animated slow gradient pan to create motion (low key) */
+@keyframes subtle-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.bg-section-data {
+  animation: subtle-pan 36s ease-in-out infinite;
+}
+
+.bg-section-methods {
+  background-image: linear-gradient(180deg, hsl(45 8% 98%) 0%, hsl(0 0% 100%) 100%);
+  position: relative;
+}
+.bg-section-methods::before {
+  left: -6%;
+  top: -6%;
+  width: 36%;
+  height: 36%;
+  background: radial-gradient(circle at 15% 10%, rgba(161,149,122,0.10), rgba(161,149,122,0) 40%);
+  filter: blur(42px);
+  opacity: 0.07;
+}
+
+.bg-section-results {
+  background-image: linear-gradient(180deg, #ffffff 0%, hsl(80 6% 98%) 100%);
+  position: relative;
+}
+.bg-section-results::before {
+  top: -8%;
+  right: -10%;
+  width: 48%;
+  height: 48%;
+  background: radial-gradient(circle at 70% 20%, rgba(49,88,72,0.10), rgba(49,88,72,0) 38%);
+  filter: blur(56px);
+  opacity: 0.06;
+}
+
+.bg-section-team {
+  background-image: linear-gradient(180deg, hsl(30 6% 98%) 0%, #ffffff 100%);
+  position: relative;
+}
+.bg-section-team::before {
+  left: -12%;
+  bottom: -12%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle at 10% 90%, rgba(112,113,116,0.10), rgba(112,113,116,0) 36%);
+  filter: blur(52px);
+  opacity: 0.06;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-section-data { animation: none; }
+}
+
+
+.section-divider-strong::after {
+  height: 4px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+  box-shadow: 0 12px 36px rgba(16,24,32,0.03);
+}
+

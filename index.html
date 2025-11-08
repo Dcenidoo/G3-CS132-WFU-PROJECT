@@ -741,7 +741,7 @@
                     loading="lazy"
                   />
                 </div>
-                <p class="font-sans font-medium text-base text-gray-800 mb-2">
+                <p class="font-sans font-medium text-base text-gray-800 mb-2 text-center">
                   Budget & Faculty-Student Ratio Correlation
                 </p>
                 <p class="font-body font-light text-small leading-body text-gray-600">
@@ -760,13 +760,41 @@
                     loading="lazy"
                   />
                 </div>
-                <p class="font-sans font-medium text-base text-gray-800 mb-2">
+                <p class="font-sans font-medium text-base text-gray-800 mb-2 text-center">
                   Student-Faculty Ratio
                 </p>
                 <p class="font-body font-light text-small leading-body text-gray-600">
                   WIP
                 </p>
               </div>
+            </div>
+          </div>
+
+          <div class="fade-in-up mt-6">
+            <div class="bg-neutral border border-gray-200 rounded-default p-8">
+              <div class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4">
+                <img
+                  src="question2.png"
+                  alt="answer to research question 2"
+                  class="w-full h-full object-cover rounded"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3 text-center"
+              >
+                Regional Budget & Enrollment Trends Correlation
+              </p>
+              <p
+                class="font-body font-light text-body leading-body text-gray-600 mb-4"
+              >
+                
+              </p>
+              <p
+                class="font-body font-light text-body leading-body text-gray-600"
+              >
+
+              </p>
             </div>
           </div>
 
@@ -781,7 +809,7 @@
                 />
               </div>
               <p
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3"
+                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3 text-center"
               >
                 Nutshell Plot
               </p>
@@ -804,15 +832,52 @@
               Hypothesis Testing Results
             </h3>
             <div class="bg-neutral border border-gray-200 rounded-default p-8">
-              <p class="font-body font-light text-body leading-body text-gray-600">
-                [This section will contain a comprehensive summary of our hypothesis testing results, including:]
-              </p>
-              <ul class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside mt-4 space-y-2">
-                <li>Results of correlation analysis between personnel budget allocation and faculty-student ratios</li>
-                <li>Findings on the relationship between enrollment growth and budget allocation changes</li>
-                <li>Statistical significance of our findings</li>
-                <li>Implications for regional educational development</li>
-              </ul>
+              <ol class="font-body font-light text-body leading-body text-gray-600 list-decimal list-inside space-y-6">
+                <li>
+                  <h4 class="font-sans font-medium text-h4 mb-2">Research Question 1: Budget vs. Student-Faculty Ratio</h4>
+
+                  <p><strong>TESTING OUTPUT:</strong></p>
+                  <p>H0: No relationship between budget allocation and faculty-student ratios<br>
+                  H1: Significant relationship exists</p>
+
+                  <p><em>*See detailed computations and tables in the <a href="https://colab.research.google.com/drive/1jyNCZYqE1PcWx_efAW5RN0C4bW8jBEc7?usp=sharing&fbclid=IwY2xjawN7k19leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeRW0g_aHRzKjly39qSPZfPfBFvc1cLXVOqOWF0FXxFP4eFgoUTU7QCgJLRQM_aem_9dnwD5JwssdRZ-2Im4-frg#scrollTo=2-EypZ1KcAkv" target="_blank" rel="noopener noreferrer">Google Colab notebook</a>*</em></p>
+
+                  <p><strong>Spearman Correlation between Budget Change % and Ratio Change:</strong> r = -0.156, p = 0.5643<br>
+                  <strong>Result:</strong> Fail to reject H0 - No significant relationship</p>
+
+                  <p><strong>Overall Ratio Change (Paired t-test):</strong><br>
+                  2019 Mean Ratio: 22.17 : 1<br>
+                  2024 Mean Ratio: 31.25 : 1<br>
+                  t = -5.556, p = 0.0001<br>
+                  Significant worsening of faculty-student ratios from 2019 to 2024</p>
+
+                  <p>
+                    The analysis found no significant relationship between changes in personnel budgets and changes in student-teacher ratios, indicating that simply increasing funding for personnel has not been an effective strategy for improving class sizes. Despite an average personnel budget increase of 7.24%, the student-teacher ratio worsened significantly across all regions, rising from 22:1 to 31:1, which suggests that budget increases were insufficient to keep pace with massive enrollment growth or were not allocated specifically to hiring new faculty.
+                  </p>
+                </li>
+
+                <li>
+                  <h4 class="font-sans font-medium text-h4 mb-2">Research Question 2: Enrollment Growth vs. Budget Allocation</h4>
+
+                  <p><strong>TESTING OUTPUT:</strong></p>
+                  <p>H0: No relationship between enrollment growth and budget allocation<br>
+                  H1: Significant relationship exists</p>
+
+                  <p><em>*See detailed computations and tables in the <a href="https://colab.research.google.com/drive/1jyNCZYqE1PcWx_efAW5RN0C4bW8jBEc7?usp=sharing&fbclid=IwY2xjawN7k19leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeRW0g_aHRzKjly39qSPZfPfBFvc1cLXVOqOWF0FXxFP4eFgoUTU7QCgJLRQM_aem_9dnwD5JwssdRZ-2Im4-frg#scrollTo=2-EypZ1KcAkv" target="_blank" rel="noopener noreferrer">Google Colab notebook</a>*</em></p>
+
+                  <p><strong>Spearman Correlation between Enrollment Change % and Total Budget Change %:</strong> r = 0.179, p = 0.5061<br>
+                  <strong>Result:</strong> Fail to reject H0 - No significant relationship</p>
+
+                  <p><strong>Budget Equity Analysis:</strong><br>
+                  High access growth regions: 5.42% TOTAL budget change<br>
+                  Low access growth regions: -7.51% TOTAL budget change<br>
+                  TOTAL Budget allocation favors regions with improving access</p>
+
+                  <p>
+                    The study revealed no strong statistical link between a region's enrollment growth and its change in total budget, showing that funding has not been systematically proportional to student population increases. However, a positive equity trend was identified, as the regions with the highest enrollment growth received a slight average budget increase of 5.42%, while those with the lowest growth saw their budgets cut by an average of 7.51%, suggesting a partial but weak policy response to access disparities.
+                  </p>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
@@ -916,25 +981,7 @@
             <div class="bg-neutral border border-gray-200 rounded-default p-8">
               <ul class="font-body font-light text-body leading-body text-gray-600 space-y-6">
                 <li>
-                  Department of Education. (2023). Basic Education Report 2023.
-                  Retrieved from https://www.deped.gov.ph/basic-education-report-2023/
-                </li>
-                <li>
-                  Commission on Higher Education. (2022). Higher Education Indicators
-                  2022. Retrieved from https://ched.gov.ph/statistics/
-                </li>
-                <li>
-                  Philippine Statistics Authority. (2023). Annual Poverty Indicators
-                  Survey (APIS). Retrieved from https://psa.gov.ph/poverty-press-releases
-                </li>
-                <li>
-                  United Nations. (2023). Sustainable Development Goal 4: Quality
-                  Education. Retrieved from https://sdgs.un.org/goals/goal4
-                </li>
-                <li>
-                  Yee, N. (2023). Higher Education Access and Equity in the
-                  Philippines: Challenges and Opportunities. Asian Journal of
-                  Education, 15(2), 45-62.
+                  WIP
                 </li>
               </ul>
             </div>
@@ -947,7 +994,7 @@
     <footer class="py-8 px-8 bg-gray-100 border-t border-gray-200">
       <div class="max-w-screen-xl mx-auto text-center">
         <p class="font-body font-light text-small text-gray-600">
-          © 2024 Research Project Group. University of the Philippines. All
+          Group 3 CS 132 WFU. University of the Philippines Diliman AY 2025-2026
           rights reserved.
         </p>
       </div>

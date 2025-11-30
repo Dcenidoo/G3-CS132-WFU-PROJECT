@@ -1,8 +1,7 @@
----
 # **Welcome!** 
 ## Group 3 - CS 132 WFU
 Members:
-
+\
 *Arian Balicusto, Dash Ceñido, Trish Obzunar, Chloe Santos*
 
 
@@ -13,7 +12,7 @@ Members:
 ## **Repository Navigation Guide**
 
 ---
-## 1) **Folders**
+## 1. **Folders**
 Data Set
 -
 Data on Philippine higher education from 2019 and 2024 was collected to address the research questions and initial hypotheses of the project. The data set folder contains all of the data used in this study. 
@@ -48,11 +47,11 @@ Miscelleneous
 The miscelleneous folder contains the css file used in the project webpage.
 
 ---
-## 2) **HTML File**
+## 2. **HTML File**
 The index.html file is the html file reponsible for the operation of the project portfolio webpage. It is linked to the CSS file "test" in the miscelleneous folder.
 
 ---
-## 3) **Supporting Files**
+## 3. **Supporting Files**
 The remaining files in this repository are considered supporting files that make the project repository fully functional. The files under this category are ".gitattributes" and "README.md"
 
 

@@ -2,7 +2,7 @@
 # **Welcome!** 
 ## Group 3 - CS 132 WFU
 Members:
-\
+
 *Arian Balicusto, Dash Ceñido, Trish Obzunar, Chloe Santos*
 
 

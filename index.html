@@ -21,7 +21,6 @@
         overflow-x: hidden;
       }
 
-      /* Floating shapes background */
       .floating-shapes {
         position: absolute;
         width: 100%;
@@ -192,7 +191,6 @@
         box-shadow: 0 12px 24px rgba(14, 79, 44, 0.15);
       }
 
-      /* Gradient text */
       .gradient-text {
         background: linear-gradient(135deg, hsl(147, 70%, 18%), hsl(122, 44%, 58%));
         -webkit-background-clip: text;
@@ -200,7 +198,6 @@
         -webkit-text-fill-color: transparent;
       }
 
-      /* Pulse animation for scroll indicator */
       @keyframes pulse-ring {
         0% {
           transform: scale(0.95);
@@ -220,7 +217,6 @@
         animation: pulse-ring 2s ease-in-out infinite;
       }
 
-      /* Stats counter animation */
       .stat-card {
         position: relative;
         overflow: hidden;
@@ -244,7 +240,6 @@
     <link rel="stylesheet" href="Miscelleneous/test.css" />
   </head>
   <body class="font-body text-body leading-body">
-    <!-- Fixed Navbar -->
     <nav
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 bg-off-white/90 backdrop-blur-sm border-b border-gray-200"
@@ -1022,7 +1017,7 @@
         });
       });
 
-      // Active navigation highlighting
+      // Active nav highlighting
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-link');
 

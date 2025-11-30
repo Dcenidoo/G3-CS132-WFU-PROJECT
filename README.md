@@ -47,7 +47,7 @@ On the other hand, the "WFU_Group_3_EDA" ipynb file is where collected data was 
 ---
 Miscelleneous
 -
-The miscelleneous folder contains the css file used in the project webpage.
+The miscelleneous folder contains the CSS file used in the project webpage.
 
 ---
 ## 2. **HTML File**

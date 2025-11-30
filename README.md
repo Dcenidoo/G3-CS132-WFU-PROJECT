@@ -6,7 +6,7 @@ Members:
 
 
 ## **Research Project**
-### Understanding the Impact of Regional Budgets on the Quality and Accessibility of Higher Education in the Philippines
+**Understanding the Impact of Regional Budgets on the Quality and Accessibility of Higher Education in the Philippines**
 
 
 ## **Repository Navigation Guide**

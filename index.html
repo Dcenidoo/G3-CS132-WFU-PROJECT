@@ -825,55 +825,107 @@
             <h3 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-16 text-center">
               Hypothesis Testing Results
             </h3>
-            <div class="bg-neutral border border-gray-200 rounded-default p-8">
-              <ol class="font-body font-light text-body leading-body text-gray-600 list-decimal list-inside space-y-6">
-                <li>
-                  <h4 class="font-sans font-medium text-h4 mb-2">Research Question 1: Budget vs. Student-Faculty Ratio</h4>
 
-                  <p><strong>TESTING OUTPUT:</strong></p>
-                  <p>H0: No relationship between budget allocation and faculty-student ratios<br>
-                  H1: Significant relationship exists</p>
+            <div class="bg-neutral border border-gray-200 rounded-default p-8 space-y-12">
 
-                  <p><em>*See detailed computations and tables in the <a href="https://colab.research.google.com/drive/1jyNCZYqE1PcWx_efAW5RN0C4bW8jBEc7?usp=sharing&fbclid=IwY2xjawN7k19leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeRW0g_aHRzKjly39qSPZfPfBFvc1cLXVOqOWF0FXxFP4eFgoUTU7QCgJLRQM_aem_9dnwD5JwssdRZ-2Im4-frg#scrollTo=2-EypZ1KcAkv" target="_blank" rel="noopener noreferrer">Google Colab notebook</a>*</em></p>
+              <!-- RQ1 -->
+              <div class="p-8 rounded-default border border-gray-200 bg-white shadow-sm hover-lift pt-12">
+                <h4 class="font-sans font-medium text-h3 text-gray-800 mb-6 text-center">
+                  Research Question 1<br>
+                  <span class="text-base font-light text-gray-600">(Personnel Budget vs. Student–Faculty Ratio)</span>
+                </h4>
 
-                  <p><strong>Spearman Correlation between Budget Change % and Ratio Change:</strong> r = -0.156, p = 0.5643<br>
-                  <strong>Result:</strong> Fail to reject H0 - No significant relationship</p>
+                <div class="space-y-6 font-body text-body text-gray-700 leading-body">
 
-                  <p><strong>Overall Ratio Change (Paired t-test):</strong><br>
-                  2019 Mean Ratio: 22.17 : 1<br>
-                  2024 Mean Ratio: 31.25 : 1<br>
-                  t = -5.556, p = 0.0001<br>
-                  Significant worsening of faculty-student ratios from 2019 to 2024</p>
+                  <!-- Hypotheses -->
+                  <div>
+                    <p class="font-medium text-primary mb-1">Hypotheses</p>
+                    <p><strong>H₀:</strong> No relationship between budget allocation and faculty–student ratios</p>
+                    <p><strong>H₁:</strong> A significant relationship exists</p>
+                  </div>
 
-                  <p>
-                    The analysis found no significant relationship between changes in personnel budgets and changes in student-teacher ratios, indicating that simply increasing funding for personnel has not been an effective strategy for improving class sizes. Despite an average personnel budget increase of 7.24%, the student-teacher ratio worsened significantly across all regions, rising from 22:1 to 31:1, which suggests that budget increases were insufficient to keep pace with massive enrollment growth or were not allocated specifically to hiring new faculty.
-                  </p>
-                </li>
+                  <!-- Spearman -->
+                  <div>
+                    <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Budget & Faculty-Student Ratios)</p>
+                    <p>
+                      r = <strong>-0.156</strong>, p = <strong>0.5643</strong><br>
+                      <strong>Fail to reject H₀ (not significant)</strong>
+                    </p>
+                  </div>
 
-                <li>
-                  <h4 class="font-sans font-medium text-h4 mb-2">Research Question 2: Enrollment Growth vs. Budget Allocation</h4>
+                  <!-- T-test -->
+                  <div>
+                    <p class="font-medium text-primary mb-1">Paired t-test (2019 vs. 2024 Faculty-Student Ratios)</p>
+                    <p>
+                      2019 Mean: <strong>22.17 : 1</strong><br>
+                      2024 Mean: <strong>31.25 : 1</strong><br>
+                      t = <strong>-5.556</strong>, p = <strong>0.0001</strong><br>
+                      <strong>Significant worsening of ratios</strong>
+                    </p>
+                  </div>
 
-                  <p><strong>TESTING OUTPUT:</strong></p>
-                  <p>H0: No relationship between enrollment growth and budget allocation<br>
-                  H1: Significant relationship exists</p>
+                  <!-- Interpretation -->
+                  <div class="mt-4">
+                    <p class="font-medium text-primary mb-1">Interpretation</p>
+                    <p>
+                      No significant relationship was found between personnel budget changes and faculty-student
+                      ratios. Despite an average personnel budget increase of 7.24%, the student-teacher ratio worsened significantly across all regions, rising from 22:1 to 31:1, which suggests that budget increases were insufficient to keep pace with massive enrollment growth or were not allocated specifically to hiring new faculty.
+                    </p>
+                  </div>
 
-                  <p><em>*See detailed computations and tables in the <a href="https://colab.research.google.com/drive/1jyNCZYqE1PcWx_efAW5RN0C4bW8jBEc7?usp=sharing&fbclid=IwY2xjawN7k19leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeRW0g_aHRzKjly39qSPZfPfBFvc1cLXVOqOWF0FXxFP4eFgoUTU7QCgJLRQM_aem_9dnwD5JwssdRZ-2Im4-frg#scrollTo=2-EypZ1KcAkv" target="_blank" rel="noopener noreferrer">Google Colab notebook</a>*</em></p>
+                </div>
+              </div>
 
-                  <p><strong>Spearman Correlation between Enrollment Change % and Total Budget Change %:</strong> r = 0.179, p = 0.5061<br>
-                  <strong>Result:</strong> Fail to reject H0 - No significant relationship</p>
+              <!-- RQ2 -->
+              <div class="p-8 rounded-default border border-gray-200 bg-white shadow-sm hover-lift pt-12">
+                <h4 class="font-sans font-medium text-h3 text-gray-800 mb-6 text-center">
+                  Research Question 2<br>
+                  <span class="text-base font-light text-gray-600">(Enrollment Growth vs. Budget Allocation)</span>
+                </h4>
 
-                  <p><strong>Budget Equity Analysis:</strong><br>
-                  High access growth regions: 5.42% TOTAL budget change<br>
-                  Low access growth regions: -7.51% TOTAL budget change<br>
-                  TOTAL Budget allocation favors regions with improving access</p>
+                <div class="space-y-6 font-body text-body text-gray-700 leading-body">
 
-                  <p>
-                    The study revealed no strong statistical link between a region's enrollment growth and its change in total budget, showing that funding has not been systematically proportional to student population increases. However, a positive equity trend was identified, as the regions with the highest enrollment growth received a slight average budget increase of 5.42%, while those with the lowest growth saw their budgets cut by an average of 7.51%, suggesting a partial but weak policy response to access disparities.
-                  </p>
-                </li>
-              </ol>
+                  <!-- Hypotheses -->
+                  <div>
+                    <p class="font-medium text-primary mb-1">Hypotheses</p>
+                    <p><strong>H₀:</strong> No relationship between enrollment growth and budget changes</p>
+                    <p><strong>H₁:</strong> A significant relationship exists</p>
+                  </div>
+
+                  <!-- Spearman -->
+                  <div>
+                    <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Enrollmet Rates & Budget) </p>
+                    <p>
+                      r = <strong>0.179</strong>, p = <strong>0.5061</strong><br>
+                      <strong>Fail to reject H₀ (not significant)</strong>
+                    </p>
+                  </div>
+
+                  <!-- Equity -->
+                  <div>
+                    <p class="font-medium text-primary mb-1">Total Budget Equity Analysis</p>
+                    <p>
+                      High-access growth regions: <strong>+5.42%</strong><br>
+                      Low-access growth regions: <strong>-7.51%</strong><br>
+                      <strong>Budget allocation favors regions with higher enrollment growth</strong>
+                    </p>
+                  </div>
+
+                  <!-- Interpretation -->
+                  <div class="mt-4">
+                    <p class="font-medium text-primary mb-1">Interpretation</p>
+                    <p>
+                      The study revealed no strong statistical link between a region's enrollment growth and its change in total budget, showing that funding has not been systematically proportional to student population increases. However, a positive equity trend was identified, as the regions with the highest enrollment growth received a slight average budget increase of 5.42%, while those with the lowest growth saw their budgets cut by an average of 7.51%, suggesting a partial but weak policy response to access disparities.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
+
+
         </div>
       </section>
 

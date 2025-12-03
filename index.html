@@ -588,40 +588,18 @@
           </h2>
 
           <div class="fade-in-up">
-            <div
-              class="iframe-container border-2 border-gray-300 rounded-default overflow-hidden mb-8 cursor-pointer"
-            >
-              <a
-                href="https://docs.google.com/spreadsheets/d/1RQL563BeWuuwkIz8vGPtG4_mYj1Q0_jWQROSZC0-4lg/edit?gid=2143128181#gid=2143128181"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block"
-                aria-label="Open data spreadsheet in new tab"
-              >
-                <div class="bg-neutral p-16 text-center">
-                  <svg
-                    class="w-16 h-16 mx-auto mb-4 text-primary"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    ></path>
-                  </svg>
-                  <p class="font-sans font-normal text-body text-gray-700">
-                    Click to view full dataset
-                  </p>
-                  <p class="font-body font-light text-small text-gray-500 mt-2">
-                    You may access the full data set here
-                  </p>
-                </div>
-              </a>
+            <div class="iframe-container border-2 border-gray-300 rounded-default overflow-hidden mb-8 relative" id="sheet-wrapper" style="--iframe-min-height:600px;">
+
+              <iframe
+                id="data-sheet-iframe"
+                src="https://docs.google.com/spreadsheets/d/1RQL563BeWuuwkIz8vGPtG4_mYj1Q0_jWQROSZC0-4lg/preview?gid=2143128181"
+                style="width:100%; height:var(--iframe-height, 600px); border:0; display:block;"
+                allowfullscreen
+                loading="lazy"
+                title="Interactive data spreadsheet"
+              ></iframe>
             </div>
+
 
             <div class="space-y-6">
               <div>
@@ -655,26 +633,16 @@
                 </ol>
 
                 <p class="font-body font-light text-body leading-body">
-                  You may access our full Excel dataset through the interactive icon above.
+                  You may access our full Excel dataset through the interactive spreadsheet above, or view it directly through this
+                  <a href="https://docs.google.com/spreadsheets/d/1RQL563BeWuuwkIz8vGPtG4_mYj1Q0_jWQROSZC0-4lg/edit?gid=2143128181#gid=2143128181"
+                    class="font-bold text-green-600 hover:text-green-700 hover:underline transition-colors duration-150"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    link
+                  </a>.
                 </p>
-              </div>
 
-              <div>
-                <h3
-                  class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3"
-                >
-                  Data Set Size
-                </h3>
-                <p
-                  class="font-body font-light text-body leading-body text-gray-600"
-                >
-                  The 2024 Expenditure Program dataset comprises 18 observations, representing the CHED Central Office and the 17 administrative regions, with four budget-related variables. The Higher Education Enrollment and Faculty–Student Ratio dataset includes 18 observations, corresponding to 17 regions and one national total, with seven variables. 
-                </p>
-                <p
-                  class="font-body font-light text-body leading-body text-gray-600"
-                >
-                  The 2024 Enrollment and Faculty–Student Ratio dataset, comprises 64 observations and 15 variables. This version provides a more comprehensive view of 2024 enrollment patterns, including student counts and the corresponding faculty–student ratios across higher education institutions, both public and private. It serves as a comprehensive source of institutional data for analyzing academic capacity and resource distribution at a detailed level. The same goes for the 2019 dataset, but it includes separate tables for the public and private institutions. For the public institutions, it encompasses 1,540 observations, while private institutions have 114 observations, both with five variables.
-                </p>
+
               </div>
             </div>
           </div>
@@ -683,106 +651,506 @@
 
   <!-- Section 4: Methods -->
   <section id="methods" class="py-32 px-8 bg-green-light relative">
-        <div class="max-w-screen-lg mx-auto">
-          <h2
-            class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
-          >
-            Methods
-          </h2>
+    <div class="max-w-screen-lg mx-auto">
+      <h2
+        class="font-sans font-medium text-h2 leading-headline text-primary text-center mb-16 fade-in-up section-accent pt-8"
+      >
+        Methods
+      </h2>
 
-          <div class="grid md:grid-cols-2 gap-8">
-            <div
-              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up md:col-span-2"
-            >
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Data Preprocessing
-              </h3>
-              <p
-                class="font-body font-light text-body leading-body mb-4"
-              >
-                The obtained raw data contained inconsistencies in formatting, structure, 
-                and naming conventions. To prepare the datasets for exploratory data analysis, 
-                the following steps were conducted:
-              </p>
-              <ul
-                class="font-body font-light text-body leading-body list-disc list-inside space-y-2"
-              >
-                <li>Reformatting and standardizing region names and labels</li>
-                <li>Converting PDF tables into machine-readable Excel files</li>
-                <li>Merging institutional-level data (2019) into regional summaries</li>
-                <li>Aligning 2019 and 2024 datasets to ensure comparability</li>
-              </ul>
-            </div>
-            <div
-              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up"
-            >
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Exploratory Data Analysis
-              </h3>
-              <p
-                class="font-body font-light text-body leading-body text-gray-600 mb-4"
-              >
-                This study conducted comprehensive exploratory data analysis to
-                understand the distribution and relationships within our
-                dataset:
-              </p>
-              <ul
-                class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
-              >
-                <li>Data Cleaning and Preprocessing</li>
-                <li>Data Aggregation</li>
-                <li>Regional Comparison Visualization</li>
-                <li>Trend Analysis</li>
-              </ul>
-            </div>
+      <!-- Methods: scoped styles -->
+      <style>
+        /* Layout for the tabs */
+        #methods .methods-tabs {
+          display: flex;
+          gap: 8px;
+          justify-content: center;
+          margin-bottom: 24px;
+          flex-wrap: wrap;
+        }
 
-            <div
-              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up"
-            >
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Hypothesis Testing
-              </h3>
-              <p
-                class="font-body font-light text-body leading-body text-gray-600 mb-4"
-              >
-                Statistical tests were employed to validate our hypotheses:
-              </p>
-              <ul
-                class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
-              >
-                <li>Spearman Correlation</li>
-                <li>T-Test</li>
-              </ul>
-            </div>
+        #methods .methods-tab {
+          background: white;
+          border: 1px solid rgba(16,24,40,0.06);
+          padding: 10px 16px;
+          border-radius: 12px;
+          cursor: pointer;
+          font-weight: 600;
+          box-shadow: 0 6px 18px rgba(14,79,44,0.03);
+          transition:
+            transform .18s cubic-bezier(.2,.9,.2,1),
+            box-shadow .18s cubic-bezier(.2,.9,.2,1),
+            background-color .18s cubic-bezier(.2,.9,.2,1),
+            color .12s linear;
+        }
 
-            <div
-              class="bg-neutral border border-gray-200 rounded-default p-8 fade-in-up md:col-span-2"
-            >
-              <h3
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4"
-              >
-                Statistical Models
-              </h3>
-              <p
-                class="font-body font-light text-body leading-body text-gray-600 mb-4"
-              >
-                WIP
+        #methods .methods-tab[aria-selected="true"] {
+          background: linear-gradient(90deg, hsl(147, 70%, 18%), hsl(122, 44%, 58%));
+          color: white;
+          transform: translateY(-4px);
+          box-shadow: 0 14px 32px rgba(14,79,44,0.12);
+        }
+
+        #methods .methods-tab:hover {
+          transform: translateY(-2px);
+        }
+
+        #methods .methods-tab:focus {
+          outline: 3px solid rgba(108,193,107,0.18);
+          outline-offset: 4px;
+        }
+
+        /* Panels: keep max-height technique but carefully managed */
+        #methods .methods-panel {
+          overflow: hidden;
+          max-height: 0;
+          opacity: 0;
+          transform: translateY(12px);
+          transition:
+            max-height 420ms cubic-bezier(.4, 0, .2, 1),
+            opacity 360ms ease,
+            transform 360ms cubic-bezier(.4, 0, .2, 1);
+          will-change: max-height, opacity, transform;
+        }
+
+        /* Visible panel state (opacity + transform). max-height is handled by inline style from JS. */
+        #methods .methods-panel.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Card visual - intentionally minimal here; the hover-lift class controls interactions */
+        #methods .panel-inner {
+          background: #fff;
+          border: 1px solid rgba(16,24,40,0.06);
+          border-radius: 12px;
+          padding: 24px;
+          /* no hover rules here — we rely on global .hover-lift for identical behavior */
+        }
+
+        #methods .panel-sleeve {
+          overflow: hidden; /* only this wrapper controls clipping for height animation */
+        }
+
+        /* Accessibility & small fixes */
+        @media (prefers-reduced-motion: reduce) {
+          #methods .methods-tab,
+          #methods .methods-panel,
+          #methods .panel-inner {
+            transition-duration: 0.001ms !important;
+            transition-delay: 0s !important;
+          }
+          #methods .methods-panel {
+            opacity: 1 !important;
+            transform: none !important;
+            max-height: none !important;
+          }
+        }
+
+        /* Prevent visual jump: ensure sleeve clips rather than panel-inner */
+        #methods .panel-sleeve {
+          transform: translateZ(0);
+          will-change: max-height;
+        }
+
+        /* Make sure panel-inner remains interactive while sleeve handles clipping */
+        #methods .panel-inner {
+          position: relative;
+          z-index: 1;
+        }
+
+        /* Slightly more prominent focus ring for keyboard users */
+        #methods .methods-tab:focus {
+          outline: 3px solid rgba(108,193,107,0.22);
+          outline-offset: 4px;
+        }
+
+        /* Responsive grid for inner layout (preserves original layout/dimensions) */
+        @media (min-width: 768px) {
+          #methods .panel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+          }
+        }
+      </style>
+
+      <!-- Tab controls -->
+      <div class="fade-in-up" role="region" aria-labelledby="methods-heading">
+        <div id="methods-tabs" class="methods-tabs" role="tablist" aria-label="Methods switch">
+          <button class="methods-tab" role="tab" aria-selected="true" aria-controls="panel-preprocess" id="tab-preprocess" tabindex="0">
+            Data Preprocessing
+          </button>
+
+          <button class="methods-tab" role="tab" aria-selected="false" aria-controls="panel-visualization" id="tab-visualization" tabindex="-1">
+            Data Visualization
+          </button>
+
+          <button class="methods-tab" role="tab" aria-selected="false" aria-controls="panel-hypothesis" id="tab-hypothesis" tabindex="-1">
+            Hypothesis Testing
+          </button>
+
+          <button class="methods-tab" role="tab" aria-selected="false" aria-controls="panel-nutshell" id="tab-nutshell" tabindex="-1">
+            Nutshell
+          </button>
+        </div>
+
+        <!-- Panels: PREPROCESS (default open) -->
+        <div id="panel-preprocess" class="methods-panel active" role="tabpanel" aria-labelledby="tab-preprocess" tabindex="0" aria-hidden="false">
+          <div class="panel-sleeve">
+            <div class="panel-inner hover-lift">
+              <h3 class="font-sans font-medium text-h3 text-center leading-headline mb-4">Data Preprocessing</h3>
+              <p class="font-body font-light text-body text-center leading-body mb-4">
+                To ensure consistency and comparabiltity across datasets, raw data was cleaned and transformed as follows:
               </p>
-              <ul
-                class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2"
-              >
-                <li>WIP</li>
-              </ul>
+              <div class="panel-grid">
+                <div>
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Data Standardizing</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    The obtained raw data contained inconsistencies in formatting, structure, and naming conventions. To prepare the datasets for data visualization, the following steps were conducted:
+                  </p>
+                  <ul class="font-body font-light text-small leading-body list-disc list-inside space-y-2">
+                    <li>Reformatting and standardizing region names and labels</li>
+                    <li>Converting PDF tables into machine-readable Excel files</li>
+                    <li>Merging institutional data (2019) into regional summaries</li>
+                    <li>Aligning 2019 and 2024 datasets to ensure comparability</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Feature Engineering</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    Key performance metrics were created to better capture relational patterns across regions.
+                  </p>
+                  <ul class="font-body font-light text-body leading-body list-disc list-inside space-y-2 mb-4">
+                    <li>Budget Change By Region (%)</li>
+                    <li>Enrollment Growth By Region (%)</li>
+                    <li>Faculty-Student Ratio Change</li>
+                  </ul>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    These variables allowed standardized comparisons between regions regardless of population sizes or budgets.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+
+        <!-- Panels: VISUALIZATION -->
+        <div id="panel-visualization" class="methods-panel" role="tabpanel" aria-labelledby="tab-visualization" tabindex="0" aria-hidden="true">
+          <div class="panel-sleeve">
+            <div class="panel-inner hover-lift">
+              <h3 class="font-sans font-medium text-h3 text-center leading-headline mb-4">Data Visualization</h3>
+              <p class="font-body font-light text-body leading-body mb-4">
+                The following methods were implemented in this study:
+              </p>
+              <ul class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2 mb-6">
+                <li>Data Preprocessing</li>
+                <li>Variable Initialization and Consolidation</li>
+                <li>Data Visualization</li>
+                <li>Hypothesis Testing</li>
+              </ul>
+
+              <div class="panel-grid">
+                <div>
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Data Preprocessing</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    The obtained raw data contained inconsistencies in formatting, structure, and naming conventions. To prepare the datasets for data visualization, the following steps were conducted:
+                  </p>
+                  <ul class="font-body font-light text-small leading-body list-disc list-inside space-y-2">
+                    <li>Reformatting and standardizing region names and labels</li>
+                    <li>Converting PDF tables into machine-readable Excel files</li>
+                    <li>Merging institutional data (2019) into regional summaries</li>
+                    <li>Aligning 2019 and 2024 datasets to ensure comparability</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Variable Initialization and Consolidation</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    Several derived variables were created to better capture relational patterns across regions.
+                  </p>
+                  <ul class="font-body font-light text-body leading-body list-disc list-inside space-y-2 mb-4">
+                    <li>Budget Change By Region (%)</li>
+                    <li>Budget Change By Region (%)</li>
+                    <li>Change in Faculty-Student Ratio</li>
+                  </ul>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    These variables allowed standardized comparisons between regions regardless of population sizes or budgets.
+                  </p>
+                </div>
+
+                <div style="grid-column: 1 / -1;">
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Data Visualization</h4>
+                  <p class="font-body font-light text-body leading-body text-gray-600 mb-4">
+                    WIP
+                  </p>
+                  <ul class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2">
+                    <li>WIP</li>
+                  </ul>
+                </div>
+
+                <div style="grid-column: 1 / -1;">
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Variable Initialization & Consolidation Notes</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    These variables were used to construct derived indicators and enable comparisons between regions and over time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panels: HYPOTHESIS -->
+        <div id="panel-hypothesis" class="methods-panel" role="tabpanel" aria-labelledby="tab-hypothesis" tabindex="0" aria-hidden="true">
+          <div class="panel-sleeve">
+            <div class="panel-inner hover-lift">
+              <h3 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Methodology Overview</h3>
+              <p class="font-body font-light text-body leading-body text-gray-600 mb-4">
+                The following methods were implemented in this study:
+              </p>
+              <ul class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2 mb-6">
+                <li>Data Preprocessing</li>
+                <li>Variable Initialization and Consolidation</li>
+                <li>Data Visualization</li>
+                <li>Hypothesis Testing</li>
+              </ul>
+
+              <div class="panel-grid">
+                <div>
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Data Preprocessing</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    The obtained raw data contained inconsistencies in formatting, structure, and naming conventions. To prepare the datasets for data visualization, the following steps were conducted:
+                  </p>
+                  <ul class="font-body font-light text-small leading-body list-disc list-inside space-y-2">
+                    <li>Reformatting and standardizing region names and labels</li>
+                    <li>Converting PDF tables into machine-readable Excel files</li>
+                    <li>Merging institutional data (2019) into regional summaries</li>
+                    <li>Aligning 2019 and 2024 datasets to ensure comparability</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Variable Initialization and Consolidation</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    Several derived variables were created to better capture relational patterns across regions.
+                  </p>
+                  <ul class="font-body font-light text-body leading-body list-disc list-inside space-y-2 mb-4">
+                    <li>Budget Change By Region (%)</li>
+                    <li>Budget Change By Region (%)</li>
+                    <li>Change in Faculty-Student Ratio</li>
+                  </ul>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    These variables allowed standardized comparisons between regions regardless of population sizes or budgets.
+                  </p>
+                </div>
+
+                <div style="grid-column: 1 / -1;">
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Data Visualization</h4>
+                  <p class="font-body font-light text-body leading-body text-gray-600 mb-4">
+                    WIP
+                  </p>
+                  <ul class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2">
+                    <li>WIP</li>
+                  </ul>
+                </div>
+
+                <div style="grid-column: 1 / -1;">
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Variable Initialization & Consolidation Notes</h4>
+                  <p class="font-body font-light text-body leading-body mb-4">
+                    These variables were used to construct derived indicators and enable comparisons between regions and over time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panels: NUTSHELL -->
+        <div id="panel-nutshell" class="methods-panel" role="tabpanel" aria-labelledby="tab-nutshell" tabindex="0" aria-hidden="true">
+          <div class="panel-sleeve">
+            <div class="panel-inner hover-lift">
+              <img
+                  src="Images/Results/nutshell.png"
+                  alt="nutshell plot"
+                  class="w-full h-full object-cover rounded"
+                  loading="lazy"
+                />
+               
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab control script (robust height animation + a11y) -->
+      <script>
+        (function () {
+          const tabSelector = '#methods .methods-tab';
+          const panelSelector = '#methods .methods-panel';
+          const tabs = Array.from(document.querySelectorAll(tabSelector));
+          const panels = Array.from(document.querySelectorAll(panelSelector));
+
+          // Ensure panels exist
+          if (!tabs.length || !panels.length) return;
+
+          // Expand a panel: animate from 0 -> content height, then clear inline maxHeight
+          function expandPanel(panel) {
+            // Guard: If already expanded, ensure 'active' and return
+            if (panel.classList.contains('active')) return;
+
+            // mark as active for CSS (opacity + transform)
+            panel.classList.add('active');
+            panel.setAttribute('aria-hidden', 'false');
+
+            // Measure height
+            panel.style.maxHeight = 'none';
+            const contentH = panel.scrollHeight;
+
+            // Start from 0 to trigger transition reliably
+            panel.style.maxHeight = '0px';
+            // Force a reflow so the browser registers the start value
+            panel.offsetHeight;
+            // Animate to actual height
+            panel.style.maxHeight = contentH + 'px';
+
+            // After transition, allow natural height (so internal changes don't break)
+            panel.addEventListener('transitionend', function handler(e) {
+              if (e.propertyName === 'max-height') {
+                // allow content to size naturally
+                panel.style.maxHeight = 'none';
+                panel.removeEventListener('transitionend', handler);
+              }
+            }, { once: true });
+          }
+
+          // Collapse a panel: animate height -> 0 then remove active
+          function collapsePanel(panel) {
+            if (!panel.classList.contains('active')) return;
+
+            panel.setAttribute('aria-hidden', 'true');
+
+            // Lock current height, then set to 0 to animate collapse
+            const curH = panel.scrollHeight;
+            panel.style.maxHeight = curH + 'px';
+            panel.offsetHeight; // force reflow
+            panel.style.maxHeight = '0px';
+
+            // After collapse completes, remove active and clear inline max-height
+            panel.addEventListener('transitionend', function handler(e) {
+              if (e.propertyName === 'max-height') {
+                panel.classList.remove('active');
+                panel.style.maxHeight = '';
+                panel.removeEventListener('transitionend', handler);
+              }
+            }, { once: true });
+          }
+
+          function activateTab(tab) {
+            tabs.forEach(t => {
+              const isSelected = t === tab;
+              t.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+              t.tabIndex = isSelected ? 0 : -1;
+              if (isSelected) t.classList.add('active-tab');
+              else t.classList.remove('active-tab');
+            });
+
+            panels.forEach(p => {
+              const shouldShow = p.id === tab.getAttribute('aria-controls');
+              if (shouldShow) {
+                expandPanel(p);
+                // Move focus to the panel for keyboard users (prevent scroll)
+                try { p.focus({ preventScroll: true }); } catch (err) {}
+              } else {
+                collapsePanel(p);
+              }
+            });
+          }
+
+          // Click + keyboard handlers for tabs (arrow/Home/End + Enter/Space)
+          tabs.forEach((tab, idx) => {
+            tab.addEventListener('click', () => activateTab(tab));
+
+            tab.addEventListener('keydown', (e) => {
+              const key = e.key;
+              if (key === 'ArrowRight' || key === 'ArrowDown') {
+                e.preventDefault();
+                const next = tabs[(idx + 1) % tabs.length];
+                next.focus();
+                activateTab(next);
+              } else if (key === 'ArrowLeft' || key === 'ArrowUp') {
+                e.preventDefault();
+                const prev = tabs[(idx - 1 + tabs.length) % tabs.length];
+                prev.focus();
+                activateTab(prev);
+              } else if (key === 'Home') {
+                e.preventDefault();
+                tabs[0].focus();
+                activateTab(tabs[0]);
+              } else if (key === 'End') {
+                e.preventDefault();
+                tabs[tabs.length - 1].focus();
+                activateTab(tabs[tabs.length - 1]);
+              } else if (key === 'Enter' || key === ' ') {
+                e.preventDefault();
+                activateTab(tab);
+              }
+            });
+          });
+
+          // On load: make sure initial active panel is properly sized
+          const initial = document.querySelector('#methods .methods-tab[aria-selected="true"]') || tabs[0];
+          const activePanel = document.getElementById(initial.getAttribute('aria-controls'));
+          // Collapse all then expand the active via RAF for smoothness
+          panels.forEach(p => {
+            if (p !== activePanel) {
+              p.style.maxHeight = '0px';
+              p.setAttribute('aria-hidden', 'true');
+              p.classList.remove('active');
+            } else {
+              p.classList.add('active');
+              p.setAttribute('aria-hidden', 'false');
+              // expand on next frame to allow CSS to pick up transition
+              requestAnimationFrame(() => {
+                // measure and set height then clear after transition
+                p.style.maxHeight = p.scrollHeight + 'px';
+                p.addEventListener('transitionend', function handler(e) {
+                  if (e.propertyName === 'max-height') {
+                    p.style.maxHeight = 'none';
+                    p.removeEventListener('transitionend', handler);
+                  }
+                }, { once: true });
+              });
+            }
+          });
+
+          // Recalculate currently-open panel heights on resize (debounced)
+          let resizeTimer = null;
+          window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+              panels.forEach(p => {
+                if (p.classList.contains('active')) {
+                  // temporarily let the browser size the panel then set the inline height to match
+                  p.style.maxHeight = 'none';
+                  const h = p.scrollHeight;
+                  p.style.maxHeight = h + 'px';
+                  // clear soon after to go back to natural height
+                  p.addEventListener('transitionend', function handler(e) {
+                    if (e.propertyName === 'max-height') {
+                      p.style.maxHeight = 'none';
+                      p.removeEventListener('transitionend', handler);
+                    }
+                  }, { once: true });
+                }
+              });
+            }, 150);
+          });
+
+        })();
+      </script>
+    </div>
+  </section>
+
 
   <!-- Section 5: Results -->
   <section id="results" class="py-32 px-8 bg-gray-50 relative">

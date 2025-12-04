@@ -1065,52 +1065,37 @@
           const tabs = Array.from(document.querySelectorAll(tabSelector));
           const panels = Array.from(document.querySelectorAll(panelSelector));
 
-          // Ensure panels exist
           if (!tabs.length || !panels.length) return;
 
-          // Expand a panel: animate from 0 -> content height, then clear inline maxHeight
           function expandPanel(panel) {
-            // Guard: If already expanded, ensure 'active' and return
             if (panel.classList.contains('active')) return;
 
-            // mark as active for CSS (opacity + transform)
             panel.classList.add('active');
             panel.setAttribute('aria-hidden', 'false');
 
-            // Measure height
             panel.style.maxHeight = 'none';
             const contentH = panel.scrollHeight;
 
-            // Start from 0 to trigger transition reliably
             panel.style.maxHeight = '0px';
-            // Force a reflow so the browser registers the start value
             panel.offsetHeight;
-            // Animate to actual height
             panel.style.maxHeight = contentH + 'px';
-
-            // After transition, allow natural height (so internal changes don't break)
             panel.addEventListener('transitionend', function handler(e) {
               if (e.propertyName === 'max-height') {
-                // allow content to size naturally
                 panel.style.maxHeight = 'none';
                 panel.removeEventListener('transitionend', handler);
               }
             }, { once: true });
           }
 
-          // Collapse a panel: animate height -> 0 then remove active
           function collapsePanel(panel) {
             if (!panel.classList.contains('active')) return;
 
             panel.setAttribute('aria-hidden', 'true');
 
-            // Lock current height, then set to 0 to animate collapse
             const curH = panel.scrollHeight;
             panel.style.maxHeight = curH + 'px';
-            panel.offsetHeight; // force reflow
+            panel.offsetHeight;
             panel.style.maxHeight = '0px';
-
-            // After collapse completes, remove active and clear inline max-height
             panel.addEventListener('transitionend', function handler(e) {
               if (e.propertyName === 'max-height') {
                 panel.classList.remove('active');
@@ -1133,15 +1118,12 @@
               const shouldShow = p.id === tab.getAttribute('aria-controls');
               if (shouldShow) {
                 expandPanel(p);
-                // Move focus to the panel for keyboard users (prevent scroll)
                 try { p.focus({ preventScroll: true }); } catch (err) {}
               } else {
                 collapsePanel(p);
               }
             });
           }
-
-          // Click + keyboard handlers for tabs (arrow/Home/End + Enter/Space)
           tabs.forEach((tab, idx) => {
             tab.addEventListener('click', () => activateTab(tab));
 
@@ -1172,10 +1154,8 @@
             });
           });
 
-          // On load: make sure initial active panel is properly sized
           const initial = document.querySelector('#methods .methods-tab[aria-selected="true"]') || tabs[0];
           const activePanel = document.getElementById(initial.getAttribute('aria-controls'));
-          // Collapse all then expand the active via RAF for smoothness
           panels.forEach(p => {
             if (p !== activePanel) {
               p.style.maxHeight = '0px';
@@ -1184,9 +1164,7 @@
             } else {
               p.classList.add('active');
               p.setAttribute('aria-hidden', 'false');
-              // expand on next frame to allow CSS to pick up transition
               requestAnimationFrame(() => {
-                // measure and set height then clear after transition
                 p.style.maxHeight = p.scrollHeight + 'px';
                 p.addEventListener('transitionend', function handler(e) {
                   if (e.propertyName === 'max-height') {
@@ -1198,18 +1176,15 @@
             }
           });
 
-          // Recalculate currently-open panel heights on resize (debounced)
           let resizeTimer = null;
           window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
               panels.forEach(p => {
                 if (p.classList.contains('active')) {
-                  // temporarily let the browser size the panel then set the inline height to match
                   p.style.maxHeight = 'none';
                   const h = p.scrollHeight;
                   p.style.maxHeight = h + 'px';
-                  // clear soon after to go back to natural height
                   p.addEventListener('transitionend', function handler(e) {
                     if (e.propertyName === 'max-height') {
                       p.style.maxHeight = 'none';
@@ -1468,7 +1443,6 @@
     </footer>
 
     <script>
-      // Mobile menu toggle
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const menuIcon = document.getElementById('menu-icon');
@@ -1481,7 +1455,6 @@
         menuIcon.textContent = isExpanded ? '☰ Menu' : '✕ Close';
       });
 
-      // Close mobile menu when clicking a link
       const mobileLinks = mobileMenu.querySelectorAll('a');
       mobileLinks.forEach((link) => {
         link.addEventListener('click', () => {
@@ -1491,7 +1464,6 @@
         });
       });
 
-      // Active nav highlighting
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-link');
 
@@ -1517,7 +1489,6 @@
       window.addEventListener('scroll', setActiveLink);
       window.addEventListener('load', setActiveLink);
 
-      // Fade-in animation on scroll
       const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px',

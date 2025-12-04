@@ -38,11 +38,9 @@ The images folder contains the image files used in the project webpage.
 ---
 Project Documents
 -
-The project documents folder contains the main documents of the research project. The data seen on the project webpage is based on the information availabe in the files of this folder.
+The project documents folder contains the main document of the research project. The data seen on the project webpage is based on the information availabe in the files of this folder.
 
-The "WFU Group 3 - Portfolio Document" PDF file is the overall master file of the research project.
-
-On the other hand, the "WFU_Group_3_EDA" ipynb file is where collected data was processed for exploratory data analysis in order to come up with answers to the project's research questions and hypotheses.
+The "WFU_Group_3_EDA" ipynb file is where collected data was processed for exploratory data analysis in order to come up with answers to the project's research questions and hypotheses.
 
 ---
 Miscelleneous

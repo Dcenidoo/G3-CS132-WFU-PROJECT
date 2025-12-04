@@ -557,7 +557,7 @@
                 </h3>
               </div>
               <h3 class="font-sans font-normal text-h3 leading-headline text-gray-800 mb-4">
-                Based on Current Data, This Study Proposes the Following Hypotheses:
+              This Study Proposes the Following Hypotheses Based on The Current Data:
               </h3>
               <p
                 class="font-body font-light text-body leading-body text-gray-600"
@@ -851,7 +851,7 @@
                 <img
                       src="Images/Results/question1.1.png"
                       alt="Budget vs. enrollment correlation chart"
-                      class="w-full h-full object-cover rounded"
+                      class="w-full h-full object-cover rounded mb-8"
                       loading="lazy"
                     />
               </div>
@@ -860,7 +860,7 @@
                 <img
                       src="Images/Results/question1.2.png"
                       alt="Budget vs. enrollment correlation chart"
-                      class="w-full h-full object-cover rounded"
+                      class="w-full h-full object-cover rounded mb-8"
                       loading="lazy"
                     />
               </div>
@@ -888,7 +888,7 @@
               <img
                       src="Images/Results/question2.png"
                       alt="Budget vs. enrollment correlation chart"
-                      class="w-full h-full object-cover rounded"
+                      class="w-full h-full object-cover rounded mb-8"
                       loading="lazy"
                     />
               <p class="font-body font-light text-body leading-body mb-8">
@@ -915,65 +915,123 @@
         <div id="panel-hypothesis" class="methods-panel" role="tabpanel" aria-labelledby="tab-hypothesis" tabindex="0" aria-hidden="true">
           <div class="panel-sleeve">
             <div class="panel-inner hover-lift">
-              <h3 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Methodology Overview</h3>
-              <p class="font-body font-light text-body leading-body text-gray-600 mb-4">
-                The following methods were implemented in this study:
+              <h3 class="font-sans font-medium text-h3 text-center leading-headline text-gray-800 mb-4">Hypothesis Testing</h3>
+              <p class="font-body font-light text-body leading-body text-gray-600 mb-8">
+                To evaluate whether government budget allocation genuinely contributes to improving higher education outcomes in the Philippines, we conducted hypothesis testing to see if funding changes are linked to faculty–student ratios and regional enrollment growth. Rather than relying on descriptive patterns alone, the tests done allow us to assess whether increased budgets translate into measurable improvements in educational quality and accessibility.
               </p>
-              <ul class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2 mb-6">
-                <li>Data Preprocessing</li>
-                <li>Variable Initialization and Consolidation</li>
-                <li>Data Visualization</li>
-                <li>Hypothesis Testing</li>
-              </ul>
-
               <div class="panel-grid">
                 <div>
-                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Data Preprocessing</h4>
-                  <p class="font-body font-light text-body leading-body mb-4">
-                    The obtained raw data contained inconsistencies in formatting, structure, and naming conventions. To prepare the datasets for data visualization, the following steps were conducted:
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-8">Spearman's Rank Correlation</h4>
+                  <p class="font-body font-light text-body leading-body mb-8">
+                    This correlation test evaluates whether two variables tend to rise or fall together, even if the pattern isn’t perfectly linear. We applied Spearman’s correlation to analyze:
                   </p>
-                  <ul class="font-body font-light text-small leading-body list-disc list-inside space-y-2">
-                    <li>Reformatting and standardizing region names and labels</li>
-                    <li>Converting PDF tables into machine-readable Excel files</li>
-                    <li>Merging institutional data (2019) into regional summaries</li>
-                    <li>Aligning 2019 and 2024 datasets to ensure comparability</li>
+                  <ul class="font-body font-light text-small leading-body list-disc list-inside space-y-2 mb-8">
+                    <li>Budget Change % vs. Ratio Change</li>
+                    <li>Enrollment Change % vs. Total Budget Change %</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Variable Initialization and Consolidation</h4>
-                  <p class="font-body font-light text-body leading-body mb-4">
-                    Several derived variables were created to better capture relational patterns across regions.
+                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-8">Paired t-Test</h4>
+                  <p class="font-body font-light text-body leading-body mb-8">
+                    To determine whether overall faculty capacity improved or worsened in each region, we used the paired t-test which is a method designed to compare the same regions measured at two different points in time. This test allows us to uncover whether or not faculty-student ratios improved over time
                   </p>
-                  <ul class="font-body font-light text-body leading-body list-disc list-inside space-y-2 mb-4">
-                    <li>Budget Change By Region (%)</li>
-                    <li>Budget Change By Region (%)</li>
-                    <li>Change in Faculty-Student Ratio</li>
-                  </ul>
-                  <p class="font-body font-light text-body leading-body mb-4">
-                    These variables allowed standardized comparisons between regions regardless of population sizes or budgets.
-                  </p>
+                 
                 </div>
 
                 <div style="grid-column: 1 / -1;">
-                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Data Visualization</h4>
-                  <p class="font-body font-light text-body leading-body text-gray-600 mb-4">
-                    WIP
-                  </p>
-                  <ul class="font-body font-light text-body leading-body text-gray-600 list-disc list-inside space-y-2">
-                    <li>WIP</li>
-                  </ul>
-                </div>
+                  <h3 class="font-sans font-medium text-h3 text-center leading-headline text-gray-800 mb-4">Hypothesis Testing Outcomes</h3>
+                  <h4 class="font-sans font-medium text-h3 text-gray-800 mb-6 text-center">
+                  Hypothesis 1<br>
+                
+                  </h4>
 
-                <div style="grid-column: 1 / -1;">
-                  <h4 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4">Variable Initialization & Consolidation Notes</h4>
-                  <p class="font-body font-light text-body leading-body mb-4">
-                    These variables were used to construct derived indicators and enable comparisons between regions and over time.
-                  </p>
+                  <div class="space-y-6 font-body text-body text-gray-700 leading-body">
+
+                    <!-- Hypotheses -->
+                    <div>
+                      <p class="font-medium text-primary mb-1">Hypotheses</p>
+                      <p><strong>H₀:</strong> No relationship between budget allocation and faculty–student ratios</p>
+                      <p><strong>H₁:</strong> A significant relationship exists</p>
+                    </div>
+
+                    <!-- Spearman -->
+                    <div>
+                      <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Budget & Faculty-Student Ratios)</p>
+                      <p>
+                        r = <strong>-0.156</strong>, p = <strong>0.5643</strong><br>
+                        <strong>Fail to reject H₀ (not significant)</strong>
+                      </p>
+                    </div>
+
+                    <!-- T-test -->
+                    <div>
+                      <p class="font-medium text-primary mb-1">Paired t-test (2019 vs. 2024 Faculty-Student Ratios)</p>
+                      <p>
+                        2019 Mean: <strong>22.17 : 1</strong><br>
+                        2024 Mean: <strong>31.25 : 1</strong><br>
+                        t = <strong>-5.556</strong>, p = <strong>0.0001</strong><br>
+                        <strong>Significant worsening of ratios</strong>
+                      </p>
+                    </div>
+
+                    <!-- Interpretation -->
+                    <div class="mt-4">
+                      <p class="font-medium text-primary mb-1">Interpretation</p>
+                      <p>
+                        No significant relationship was found between personnel budget changes and faculty-student
+                        ratios. Despite an average personnel budget increase of 7.24%, the student-teacher ratio worsened significantly across all regions, rising from 22:1 to 31:1, which suggests that budgets did not keep pace with enrollment demand 
+                        or were not directed toward faculty hiring. As a result, regions, most especially high-enrollment ones like Central Visayas, Bicol, Ilocos, and CALABARZON, struggled to maintain instructional quality. This misalignment slows progress toward SDG 4, which requires not just access, but adequate academic capacity.
+                      </p>
+                    </div>
+                    <h4 class="font-sans font-medium text-h3 text-gray-800 mb-6 text-center">
+                    Hypothesis 2<br>
+              
+                  </h4>
+
+                  <div class="space-y-6 font-body text-body text-gray-700 leading-body">
+
+                    <!-- Hypotheses -->
+                    <div>
+                      <p class="font-medium text-primary mb-1">Hypotheses</p>
+                      <p><strong>H₀:</strong> No relationship between enrollment growth and budget changes</p>
+                      <p><strong>H₁:</strong> A significant relationship exists</p>
+                    </div>
+
+                    <!-- Spearman -->
+                    <div>
+                      <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Enrollmet Rates & Budget) </p>
+                      <p>
+                        r = <strong>0.179</strong>, p = <strong>0.5061</strong><br>
+                        <strong>Fail to reject H₀ (not significant)</strong>
+                      </p>
+                    </div>
+
+                    <!-- Equity -->
+                    <div>
+                      <p class="font-medium text-primary mb-1">Total Budget Equity Analysis</p>
+                      <p>
+                        High-access growth regions: <strong>+5.42%</strong><br>
+                        Low-access growth regions: <strong>-7.51%</strong><br>
+                        <strong>Budget allocation favors regions with higher enrollment growth</strong>
+                      </p>
+                    </div>
+
+                    <!-- Interpretation -->
+                    <div class="mt-4">
+                      <p class="font-medium text-primary mb-1">Interpretation</p>
+                      <p>
+                        The result revealed no strong statistical link between a region's enrollment growth and its change in total budget, showing that funding has not been systematically proportional to student population increases. However, a positive equity trend was identified, as the regions with the highest enrollment growth received a slight average budget increase of 5.42%, while those with the lowest growth saw their budgets cut by an average of 7.51%, suggesting a partial but weak policy response to access disparities.
+                        
+                      </p>
+                    </div>
+
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         <!-- Panels: NUTSHELL -->
@@ -984,9 +1042,15 @@
               <img
                   src="Images/Results/nutshell.png"
                   alt="nutshell plot"
-                  class="w-full h-full object-cover rounded"
+                  class="w-full h-full object-cover rounded mb-8"
                   loading="lazy"
                 />
+              <p class="font-body font-light text-body text-center leading-body mb-8">
+                This nutshell plot provides a quick visual summary of how regional funding and academic conditions in the Philippines changed from 2019 to 2024. The top chart compares total higher-education budgets across regions, showing that most regions experienced increases by 2024, with particularly large jumps in areas such as CALABARZON and Central Luzon. The bottom chart pairs these changes with shifts in student–teacher ratios. While budgets generally grew, many regions also saw higher student–teacher ratios in 2024, indicating larger class sizes and increased pressure on faculty.
+              </p>
+              <p class="font-body font-light text-body text-center leading-body mb-8">
+                Taken together, the two charts highlight an important finding of the project: rising regional budgets did not consistently lead to improved student–teacher ratios, suggesting that increased funding alone may not be enough to enhance instructional conditions. The nutshell plot captures this core insight at a glance and sets the stage for deeper analysis in the full report.
+              </p>
                
             </div>
           </div>
@@ -1171,26 +1235,40 @@
           >
             Results
           </h2>
-
+          
           <!-- Exploratory Data Analysis Results -->
           <div class="fade-in-up mb-12">
             <h3 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-16 text-center">
               Exploratory Data Analysis Results
             </h3>
+          </div>
+          
+            <!-- Summary of Findings -->
+            <div class="fade-in-up mt-6 mb-12">
+              <div class="bg-neutral border border-gray-200 rounded-default p-12">
+                <p
+                  class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3 text-center"
+                >
+                  Summary
+                </p>
+                <p
+                  class="font-body font-light text-body leading-body text-gray-600 mb-4"
+                >
+                  Lorem ipsum
+                </p>
+                <p
+                  class="font-body font-light text-body leading-body text-gray-600"
+                >
 
+                </p>
+              </div>
+            </div>
+          <!-- Limitations and Importance of Study -->
             <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="fade-in-up">
               <div class="bg-neutral border border-gray-200 rounded-default p-8 mb-4">
-                <div class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4">
-                  <img
-                    src="Images/Results/question1.1.png"
-                    alt="Budget vs. enrollment correlation chart"
-                    class="w-full h-full object-cover rounded"
-                    loading="lazy"
-                  />
-                </div>
                 <p class="font-sans font-medium text-base text-gray-800 mb-2 text-center">
-                  Budget & Faculty-Student Ratio Correlation
+                  Limitations
                 </p>
                 <p class="font-body font-light text-small leading-body text-gray-600">
                   WIP
@@ -1200,16 +1278,8 @@
 
             <div class="fade-in-up">
               <div class="bg-neutral border border-gray-200 rounded-default p-8 mb-4">
-                <div class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4">
-                  <img
-                    src="Images/Results/question1.2.png"
-                    alt="Faculty-student ratio  impact chart"
-                    class="w-full h-full object-cover rounded"
-                    loading="lazy"
-                  />
-                </div>
                 <p class="font-sans font-medium text-base text-gray-800 mb-2 text-center">
-                  Student-Faculty Ratio
+                  Importance of Study
                 </p>
                 <p class="font-body font-light text-small leading-body text-gray-600">
                   WIP
@@ -1217,41 +1287,18 @@
               </div>
             </div>
           </div>
-
+          <!-- Call to Action -->
           <div class="fade-in-up mt-6">
             <div class="bg-neutral border border-gray-200 rounded-default p-8">
-              <div class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4">
-                <img
-                  src="Images/Results/question2.png"
-                  alt="answer to research question 2"
-                  class="w-full h-full object-cover rounded"
-                  loading="lazy"
-                />
-              </div>
               <p
                 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3 text-center"
               >
-                Figure 3: Regional Budget & Enrollment Trends Correlation
+                Call to Action
               </p>
               <p
                 class="font-body font-light text-body leading-body text-gray-600 mb-4"
               >
-                Figure 3 presents the total regional budgets and enrollment trends 
-                in higher education between 2019 and 2024. The bar graphs 
-                represent total budget allocations in Philippine pesos, 
-                while the overlaid lines show the number of enrolled students 
-                per region. The figure reveals that regions with higher budget 
-                allocations, such as the National Capital Region, Central Luzon, 
-                and CALABARZON also tend to house higher student populations. 
-                This pattern suggests that there are pre-existing regional gaps 
-                in both funding and enrollment, highlighting the geographic 
-                inequity in resource distribution and access. On the other hand, 
-                regions with lower budgets, such as MIMAROPA, Caraga, and the 
-                Cordillera Administrative Region, observe lower enrollment rates 
-                and student populations. The visual data opens up an opportunity 
-                for even greater analysis, to uncover whether or not regional 
-                budget allocations are proportionate to enrollment growth and 
-                access to higher education.
+                Lorem Ipsum
               </p>
               <p
                 class="font-body font-light text-body leading-body text-gray-600"
@@ -1260,141 +1307,6 @@
               </p>
             </div>
           </div>
-
-          <div class="fade-in-up">
-            <div class="bg-neutral border border-gray-200 rounded-default p-8">
-              <div class="aspect-video bg-gray-100 rounded flex items-center justify-center mb-4">
-                <img
-                  src="Images/Results/nutshell.png"
-                  alt="nutshell plot"
-                  class="w-full h-full object-cover rounded"
-                  loading="lazy"
-                />
-              </div>
-              <p
-                class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-3 text-center"
-              >
-                Nutshell Plot
-              </p>
-              <p
-                class="font-body font-light text-body leading-body text-gray-600 mb-4"
-              >
-                
-              </p>
-              <p
-                class="font-body font-light text-body leading-body text-gray-600"
-              >
-
-              </p>
-            </div>
-          </div>
-
-          <!-- Hypothesis Testing Results -->
-          <div class="fade-in-up mt-12">
-            <h3 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-16 text-center">
-              Hypothesis Testing Results
-            </h3>
-
-            <div class="bg-neutral border border-gray-200 rounded-default p-8 space-y-12">
-
-              <!-- RQ1 -->
-              <div class="p-8 rounded-default border border-gray-200 bg-white shadow-sm hover-lift pt-12">
-                <h4 class="font-sans font-medium text-h3 text-gray-800 mb-6 text-center">
-                  Hypothesis 1<br>
-                
-                </h4>
-
-                <div class="space-y-6 font-body text-body text-gray-700 leading-body">
-
-                  <!-- Hypotheses -->
-                  <div>
-                    <p class="font-medium text-primary mb-1">Hypotheses</p>
-                    <p><strong>H₀:</strong> No relationship between budget allocation and faculty–student ratios</p>
-                    <p><strong>H₁:</strong> A significant relationship exists</p>
-                  </div>
-
-                  <!-- Spearman -->
-                  <div>
-                    <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Budget & Faculty-Student Ratios)</p>
-                    <p>
-                      r = <strong>-0.156</strong>, p = <strong>0.5643</strong><br>
-                      <strong>Fail to reject H₀ (not significant)</strong>
-                    </p>
-                  </div>
-
-                  <!-- T-test -->
-                  <div>
-                    <p class="font-medium text-primary mb-1">Paired t-test (2019 vs. 2024 Faculty-Student Ratios)</p>
-                    <p>
-                      2019 Mean: <strong>22.17 : 1</strong><br>
-                      2024 Mean: <strong>31.25 : 1</strong><br>
-                      t = <strong>-5.556</strong>, p = <strong>0.0001</strong><br>
-                      <strong>Significant worsening of ratios</strong>
-                    </p>
-                  </div>
-
-                  <!-- Interpretation -->
-                  <div class="mt-4">
-                    <p class="font-medium text-primary mb-1">Interpretation</p>
-                    <p>
-                      No significant relationship was found between personnel budget changes and faculty-student
-                      ratios. Despite an average personnel budget increase of 7.24%, the student-teacher ratio worsened significantly across all regions, rising from 22:1 to 31:1, which suggests that budget increases were insufficient to keep pace with massive enrollment growth or were not allocated specifically to hiring new faculty.
-                    </p>
-                  </div>
-
-                </div>
-              </div>
-
-              <!-- RQ2 -->
-              <div class="p-8 rounded-default border border-gray-200 bg-white shadow-sm hover-lift pt-12">
-                <h4 class="font-sans font-medium text-h3 text-gray-800 mb-6 text-center">
-                  Hypothesis 2<br>
-            
-                </h4>
-
-                <div class="space-y-6 font-body text-body text-gray-700 leading-body">
-
-                  <!-- Hypotheses -->
-                  <div>
-                    <p class="font-medium text-primary mb-1">Hypotheses</p>
-                    <p><strong>H₀:</strong> No relationship between enrollment growth and budget changes</p>
-                    <p><strong>H₁:</strong> A significant relationship exists</p>
-                  </div>
-
-                  <!-- Spearman -->
-                  <div>
-                    <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Enrollmet Rates & Budget) </p>
-                    <p>
-                      r = <strong>0.179</strong>, p = <strong>0.5061</strong><br>
-                      <strong>Fail to reject H₀ (not significant)</strong>
-                    </p>
-                  </div>
-
-                  <!-- Equity -->
-                  <div>
-                    <p class="font-medium text-primary mb-1">Total Budget Equity Analysis</p>
-                    <p>
-                      High-access growth regions: <strong>+5.42%</strong><br>
-                      Low-access growth regions: <strong>-7.51%</strong><br>
-                      <strong>Budget allocation favors regions with higher enrollment growth</strong>
-                    </p>
-                  </div>
-
-                  <!-- Interpretation -->
-                  <div class="mt-4">
-                    <p class="font-medium text-primary mb-1">Interpretation</p>
-                    <p>
-                      The result revealed no strong statistical link between a region's enrollment growth and its change in total budget, showing that funding has not been systematically proportional to student population increases. However, a positive equity trend was identified, as the regions with the highest enrollment growth received a slight average budget increase of 5.42%, while those with the lowest growth saw their budgets cut by an average of 7.51%, suggesting a partial but weak policy response to access disparities.
-                    </p>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-
         </div>
       </section>
 

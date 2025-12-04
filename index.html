@@ -164,7 +164,6 @@
         border-color: hsl(122, 44%, 58%);
       }
 
-      /* Accent decorations */
       .section-accent {
         position: relative;
       }
@@ -181,7 +180,6 @@
         border-radius: 2px;
       }
 
-      /* Card hover effects */
       .hover-lift {
         transition: all 0.3s ease;
       }
@@ -356,7 +354,7 @@
     </nav>
 
     <main>
-      <!-- Section 1: Hero -->
+      <!-- Section 1: Top -->
       <section id="top" class="min-h-screen flex items-center justify-center bg-gradient-1 px-8 py-32 relative">
       <div class="floating-shapes">
       <div class="shape shape-1"></div>
@@ -488,7 +486,6 @@
                 </h3>
               </div>
 
-              <!-- Main Header -->
               <h3 class="font-sans font-normal text-h3 leading-headline text-gray-800 mb-4">
                 Does the Commission on Higher Education (CHED) Allocate Its Budget Effectively?
               </h3>
@@ -658,9 +655,7 @@
         Methods
       </h2>
 
-      <!-- Methods: scoped styles -->
       <style>
-        /* Layout for the tabs */
         #methods .methods-tabs {
           display: flex;
           gap: 8px;
@@ -700,7 +695,6 @@
           outline-offset: 4px;
         }
 
-        /* Panels: keep max-height technique but carefully managed */
         #methods .methods-panel {
           overflow: hidden;
           max-height: 0;
@@ -713,26 +707,22 @@
           will-change: max-height, opacity, transform;
         }
 
-        /* Visible panel state (opacity + transform). max-height is handled by inline style from JS. */
         #methods .methods-panel.active {
           opacity: 1;
           transform: translateY(0);
         }
 
-        /* Card visual - intentionally minimal here; the hover-lift class controls interactions */
         #methods .panel-inner {
           background: #fff;
           border: 1px solid rgba(16,24,40,0.06);
           border-radius: 12px;
           padding: 24px;
-          /* no hover rules here — we rely on global .hover-lift for identical behavior */
         }
 
         #methods .panel-sleeve {
-          overflow: hidden; /* only this wrapper controls clipping for height animation */
+          overflow: hidden;
         }
 
-        /* Accessibility & small fixes */
         @media (prefers-reduced-motion: reduce) {
           #methods .methods-tab,
           #methods .methods-panel,
@@ -747,25 +737,21 @@
           }
         }
 
-        /* Prevent visual jump: ensure sleeve clips rather than panel-inner */
         #methods .panel-sleeve {
           transform: translateZ(0);
           will-change: max-height;
         }
 
-        /* Make sure panel-inner remains interactive while sleeve handles clipping */
         #methods .panel-inner {
           position: relative;
           z-index: 1;
         }
-
-        /* Slightly more prominent focus ring for keyboard users */
+        
         #methods .methods-tab:focus {
           outline: 3px solid rgba(108,193,107,0.22);
           outline-offset: 4px;
         }
 
-        /* Responsive grid for inner layout (preserves original layout/dimensions) */
         @media (min-width: 768px) {
           #methods .panel-grid {
             display: grid;
@@ -775,7 +761,6 @@
         }
       </style>
 
-      <!-- Tab controls -->
       <div class="fade-in-up" role="region" aria-labelledby="methods-heading">
         <div id="methods-tabs" class="methods-tabs" role="tablist" aria-label="Methods switch">
           <button class="methods-tab" role="tab" aria-selected="true" aria-controls="panel-preprocess" id="tab-preprocess" tabindex="0">
@@ -795,7 +780,6 @@
           </button>
         </div>
 
-        <!-- Panels: PREPROCESS (default open) -->
         <div id="panel-preprocess" class="methods-panel active" role="tabpanel" aria-labelledby="tab-preprocess" tabindex="0" aria-hidden="false">
           <div class="panel-sleeve">
             <div class="panel-inner hover-lift">
@@ -836,7 +820,7 @@
           </div>
         </div>
 
-        <!-- Panels: VISUALIZATION -->
+        <!-- Data Visualizaation -->
         <div id="panel-visualization" class="methods-panel" role="tabpanel" aria-labelledby="tab-visualization" tabindex="0" aria-hidden="true">
           <div class="panel-sleeve">
             <div class="panel-inner hover-lift">
@@ -911,7 +895,7 @@
           </div>
         </div>
 
-        <!-- Panels: HYPOTHESIS -->
+        <!-- Hypothesis Testing -->
         <div id="panel-hypothesis" class="methods-panel" role="tabpanel" aria-labelledby="tab-hypothesis" tabindex="0" aria-hidden="true">
           <div class="panel-sleeve">
             <div class="panel-inner hover-lift">
@@ -948,14 +932,12 @@
 
                   <div class="space-y-6 font-body text-body text-gray-700 leading-body">
 
-                    <!-- Hypotheses -->
                     <div>
                       <p class="font-medium text-primary mb-1">Hypotheses</p>
                       <p><strong>H₀:</strong> No relationship between budget allocation and faculty–student ratios</p>
                       <p><strong>H₁:</strong> A significant relationship exists</p>
                     </div>
 
-                    <!-- Spearman -->
                     <div>
                       <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Budget & Faculty-Student Ratios)</p>
                       <p>
@@ -964,7 +946,6 @@
                       </p>
                     </div>
 
-                    <!-- T-test -->
                     <div>
                       <p class="font-medium text-primary mb-1">Paired t-test (2019 vs. 2024 Faculty-Student Ratios)</p>
                       <p>
@@ -975,7 +956,6 @@
                       </p>
                     </div>
 
-                    <!-- Interpretation -->
                     <div class="mt-4">
                       <p class="font-medium text-primary mb-1">Interpretation</p>
                       <p>
@@ -991,14 +971,12 @@
 
                   <div class="space-y-6 font-body text-body text-gray-700 leading-body">
 
-                    <!-- Hypotheses -->
                     <div>
                       <p class="font-medium text-primary mb-1">Hypotheses</p>
                       <p><strong>H₀:</strong> No relationship between enrollment growth and budget changes</p>
                       <p><strong>H₁:</strong> A significant relationship exists</p>
                     </div>
 
-                    <!-- Spearman -->
                     <div>
                       <p class="font-medium text-primary mb-1">Spearman Correlation (Change in Enrollmet Rates & Budget) </p>
                       <p>
@@ -1007,7 +985,6 @@
                       </p>
                     </div>
 
-                    <!-- Equity -->
                     <div>
                       <p class="font-medium text-primary mb-1">Total Budget Equity Analysis</p>
                       <p>
@@ -1017,7 +994,6 @@
                       </p>
                     </div>
 
-                    <!-- Interpretation -->
                     <div class="mt-4">
                       <p class="font-medium text-primary mb-1">Interpretation</p>
                       <p>
@@ -1034,7 +1010,7 @@
         </div>
         </div>
 
-        <!-- Panels: NUTSHELL -->
+        <!-- Nutshell Plot -->
         <div id="panel-nutshell" class="methods-panel" role="tabpanel" aria-labelledby="tab-nutshell" tabindex="0" aria-hidden="true">
           <div class="panel-sleeve">
             <div class="panel-inner hover-lift">
@@ -1057,7 +1033,6 @@
         </div>
       </div>
 
-      <!-- Tab control script (robust height animation + a11y) -->
       <script>
         (function () {
           const tabSelector = '#methods .methods-tab';
@@ -1212,7 +1187,6 @@
       </h2>
 
       <div class="space-y-16">
-        <!-- Summary card -->
         <div class="fade-in-up bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
           <h3 class="font-sans font-medium text-h3 leading-headline text-gray-800 mb-4 text-center">Summary</h3>
           <p class="font-body font-light text-body leading-body mb-4">
@@ -1229,17 +1203,13 @@
           </p>
         </div>
 
-        <!-- Figures grid (two columns on desktop) -->
         <div class="grid md:grid-cols-2 gap-8">
-          <!-- Figure 1 card -->
-          <!-- Limitations & Recommendations card (enhanced spacing + bold headers) -->
           <div class="fade-in-up">
             <div class="bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
               <h4 class="font-sans font-medium text-h4 leading-headline text-gray-800 mb-4 text-center">
                 Limitations & Future Research Recommendations
               </h4>
 
-              <!-- LIMITATIONS HEADER -->
               <p class="font-body text-base font-semibold leading-body mb-4">
                 The study contains a few limitations, including the fact that the dataset included both SUCs and private HEIs, but only public institutions are directly affected by CHED/National Government budgets, making comparisons less precise. Although SUC-level data were available, the results were aggregated by region, which limited insights into specific institutions with the largest resource gaps. Additionally, student–faculty ratios and enrollment rates were the only proxies for educational quality used, and broader learning and outcome-based metrics were not included. Lastly, the study’s analysis covered only 2019 and 2024, restricting the evaluation of trends across longer periods.
               </p>
@@ -1251,8 +1221,6 @@
             </div>
           </div>
 
-
-          <!-- Figure 2 card -->
           <div class="fade-in-up">
             <div class="bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
               <h4 class="font-sans font-medium text-h4 leading-headline text-gray-800 mb-4 text-center">
@@ -1267,7 +1235,6 @@
             </div>
           </div>
 
-          <!-- Figure 3 full-width card -->
           <div class="fade-in-up md:col-span-2">
             <div class="bg-neutral border border-gray-200 rounded-default p-8 hover-lift">
               <h4 class="font-sans font-medium text-h4 leading-headline text-gray-800 mb-4 text-center">

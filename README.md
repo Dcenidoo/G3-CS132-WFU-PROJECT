@@ -37,6 +37,8 @@ The images folder contains the image files used in the project webpage.
 
 The graphs created for the Data Visualization portion of our exploratory data analysis (EDA) can be found here. 
 
+There are two images addressing the first research question while there is one image addressing the second research question.
+
 The **nutshell plot** can be found here.
 
 ---

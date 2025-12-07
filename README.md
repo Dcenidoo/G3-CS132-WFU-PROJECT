@@ -35,6 +35,8 @@ Images
 -
 The images folder contains the image files used in the project webpage.
 
+The **nutshell plot** can be found here.
+
 ---
 Project Documents
 -

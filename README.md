@@ -9,7 +9,7 @@ Members:
 **Understanding the Impact of Regional Budgets on the Quality and Accessibility of Higher Education in the Philippines**
 
 ## **Webpage Portfolio**
-The link to this project's webpage portfolio can be accessed [here](https://dcenidoo.github.io/G3-CS132-WFU-PROJECT/index.html). Note that the PDF version of the webpage portfolio DOES NOT accurately represent the actual website. Due to unknown reasons, the website does not render properly when downloaded as a PDF file.
+The link to this project's webpage portfolio can be accessed [here](https://dcenidoo.github.io/G3-CS132-WFU-PROJECT/index.html). Note that the PDF version of the webpage portfolio has some visual discrepancies.
 
 ---
 # **Repository Navigation Guide**
@@ -41,6 +41,8 @@ Project Documents
 The project documents folder contains the main document of the research project. The data seen on the project webpage is based on the information availabe in the files of this folder.
 
 The "WFU_Group_3_EDA" ipynb file is where collected data was processed for exploratory data analysis in order to come up with answers to the project's research questions and hypotheses.
+
+The "WFU-Group 3 CS 132 Portfolio Page EDA" file is the PDF-rendered version of the portfolio webpage.
 
 ---
 Miscelleneous

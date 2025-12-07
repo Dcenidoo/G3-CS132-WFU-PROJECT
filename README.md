@@ -9,7 +9,7 @@ Members:
 **Understanding the Impact of Regional Budgets on the Quality and Accessibility of Higher Education in the Philippines**
 
 ## **Webpage Portfolio**
-The link to this project's webpage portfolio can be accessed [here](https://dcenidoo.github.io/G3-CS132-WFU-PROJECT/index.html)
+The link to this project's webpage portfolio can be accessed [here](https://dcenidoo.github.io/G3-CS132-WFU-PROJECT/index.html). Note that the PDF version of the webpage portfolio DOES NOT accurately represent the actual website. Due to unknown reasons, the website does not render properly when downloaded as a PDF file.
 
 ---
 # **Repository Navigation Guide**
